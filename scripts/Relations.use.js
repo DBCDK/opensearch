@@ -198,54 +198,55 @@ var Relations = function() {
     var analysedTitles = [];
     var query;
                         
-     //Litteraturtolkninger
-    if (String(analysisXML.dkabm::record.ac::source).match(/Litteraturtolkninger/)) {
-    
-		 //find firstname, lastname and birth year of the creators of the analysed works
-			for each (child in analysisXML.*.*.*.(@tag=='600')) {
-      	var first = String(child.*.(@code=='h')); 
-        var last = String(child.*.(@code=='a'));
-        var born = String(child.*.(@code=='c'));
-        last = " " + last;
-        creator = first + last;
-        creators.push(creator); //no birth year
-        if (born !== ""){
-        	creator = creator + " \(" + born + "\)";
-          creators.push (creator);
-        }
-        creator = "NOBIRTH:" + first + last;     
-        creators.push (creator); //creator NOBIRTH
-      }
-      //find titles of the analysed works
-      for each (child in analysisXML.*.*.*.(@tag=='666').*.(@code=='t')) {
-      	analysedTitle = String(child);
-        analysedTitle = Normalize.removeSpecialCharacters(analysedTitle); //normalizing because the field title in dc stream in which we search is normalized
-        analysedTitles.push (analysedTitle);
-      }
-		
-      for (var x = 0; x < creators.length; ++x ) {
-       for (var y = 0; y < analysedTitles.length; ++y){
-          query = "creator \u003D " + creators[x] + " AND " + "title \u003D " + analysedTitles[y]; 
-					var results = FedoraCQLSearch.search(query);
-					
-					//if no match on normal title, search for part title
-          if (results.length < 1) {
-	          query = "creator \u003D " + creators[x] + " AND " + "title \u003D PART TITLE: " + analysedTitles[y];
-						results = FedoraCQLSearch.search(query);
-						
-						}
-						//add relations based on the results
-	          for (var i = 0; i < results.length; ++i) {
-	          	var result = results[i]; //
-	            if (!String(result).match(/work:.*/) && !String(result).match(/870974:.*/) && !String(result).match(/150005:.*/)) {
-	            	DbcAddiRelations.isAnalysisOf(pid, result);
-	            }
-	          }     
-	        }
-	      }
+     //Litteraturtolkninger - does not work properly at the moment KWC 2013-05-03
+//    if (String(analysisXML.dkabm::record.ac::source).match(/Litteraturtolkninger/)) {
+//    
+//		 //find firstname, lastname and birth year of the creators of the analysed works
+//			for each (child in analysisXML.*.*.*.(@tag=='600')) {
+//      	var first = String(child.*.(@code=='h')); 
+//        var last = String(child.*.(@code=='a'));
+//        var born = String(child.*.(@code=='c'));
+//        last = " " + last;
+//        creator = first + last;
+//        creators.push(creator); //no birth year
+//        if (born !== ""){
+//        	creator = creator + " \(" + born + "\)";
+//          creators.push (creator);
+//        }
+//        creator = "NOBIRTH:" + first + last;     
+//        creators.push (creator); //creator NOBIRTH
+//      }
+//      //find titles of the analysed works
+//      for each (child in analysisXML.*.*.*.(@tag=='666').*.(@code=='t')) {
+//      	analysedTitle = String(child);
+//        analysedTitle = Normalize.removeSpecialCharacters(analysedTitle); //normalizing because the field title in dc stream in which we search is normalized
+//        analysedTitles.push (analysedTitle);
+//      }
+//		
+//      for (var x = 0; x < creators.length; ++x ) {
+//       for (var y = 0; y < analysedTitles.length; ++y){
+//          query = "creator \u003D " + creators[x] + " AND " + "title \u003D " + analysedTitles[y]; 
+//					var results = FedoraCQLSearch.search(query);
+//					
+//					//if no match on normal title, search for part title
+//          if (results.length < 1) {
+//	          query = "creator \u003D " + creators[x] + " AND " + "title \u003D PART TITLE: " + analysedTitles[y];
+//						results = FedoraCQLSearch.search(query);
+//						
+//						}
+//						//add relations based on the results
+//	          for (var i = 0; i < results.length; ++i) {
+//	          	var result = results[i]; //
+//	            if (!String(result).match(/work:.*/) && !String(result).match(/870974:.*/) && !String(result).match(/150005:.*/)) {
+//	            	DbcAddiRelations.isAnalysisOf(pid, result);
+//	            }
+//	          }     
+//	        }
+//	      }
 			            
       //Litteratursiden
-		} else if ( String(analysisXML.dkabm::record.ac::source).match(/Litteratursiden/) && String(analysisXML.dkabm::record.dc::title).match(/Analyse af/) ) {
+//		} else if ( String(analysisXML.dkabm::record.ac::source).match(/Litteratursiden/) && String(analysisXML.dkabm::record.dc::title).match(/Analyse af/) ) {
+    if ( String(analysisXML.dkabm::record.ac::source).match(/Litteratursiden/) && String(analysisXML.dkabm::record.dc::title).match(/Analyse af/) ) {
       	var relation = "ISBN:" + String(analysisXML.dkabm::record.dcterms::references);
 
       	var results = FedoraPIDSearch.identifier( relation );
@@ -286,60 +287,94 @@ var Relations = function() {
     Log.info ("End isAnalysisOf" );
 
   };
-	
-	that.hasAnalysis = function ( xml, pid) {
+
+
+  that.hasAnalysis = function ( xml, pid) {
 
     Log.info ("Start hasAnalysis" );
 
     // Converting the xml-string to an XMLObject which e4x can handle:
     var katalogXML = XmlUtil.fromString( xml );
 
-    var titles = [];
-
-    for each (var child in katalogXML.dkabm::record.dc::title) {
-        var title = String(child);
-        title = Normalize.removeSpecialCharacters(title); //normalizing because the field title in dc stream in which we search is normalized
-        titles.push (title);
-    }
-
-    //search based on part titles like fairy tales, poems and short stories
-    for each (var child in katalogXML.*.*.*.(@tag=='530').*.(@code=='t')) {
-        var partTitle = String(child);
-        partTitle = Normalize.removeSpecialCharacters(partTitle); //normalizing because the field title in dc stream in which we search is normalized
-        titles.push (partTitle);
-    }
-    var creators = [];
-    for each (child in katalogXML.dkabm::record.dc::creator) {
-      var creator = String(child);
-      creator = Normalize.removeSpecialCharacters(creator);
-      creators.push (creator); //creator with possible birth year
-
-      if (creator.match(/\(/)) { //if creator had birth year remove it, and add to creators
-				creator = creator.replace(/(.*)\(.*\)/, "$1");
-        creators.push (creator); //creator without birth year 
-        creator = "NOBIRTH:" + creator;			//TODO is this pointless since the dc stream for subject does not contain "NOBIRTH" should it be added?
-        creators.push (creator); //creator NOBIRTH
-      }
+    var creator = String(katalogXML.dkabm::record.dc::creator[0]).replace(/(.*)\(.*\)/, "$1");
+    creator = Normalize.removeSpecialCharacters(creator);
+    creator = creator.replace(/(.*) $/, "$1");
+    var title = String(katalogXML.dkabm::record.dc::title[0]);
+    title = Normalize.removeSpecialCharacters(title);
+    var query = "subject = " + creator + " AND subject = " + title + " AND ( label = analyse OR label = littolk )";
+  
+    Log.info("query: " + query);
       
-    }    
-    for (var x = 0; x < titles.length; ++x ) {
-     for (var y = 0; y < creators.length; ++y){
-        var query = "subject = " + titles[x] + " AND subject = " + creators[y] + " AND ( label = analyse OR label = littolk )";
-        var results = FedoraCQLSearch.search(query);
+    var results = FedoraCQLSearch.search( query );
+      
+    for ( var i = 0; i < results.length; ++i ) {
+      var result = results[i];
 
-        //add relations based on the results
-        for (var i = 0; i < results.length; ++i) {
-          var result = results[i]; //
-          if (String(result).match(/150005:.*/) || String(result).match(/870974:.*/)) {
-            DbcAddiRelations.hasAnalysis(pid, result);
-          }
-        } 
-     }
+      Log.info( "result: " + result );        
+      if (String(result).match(/150005:.*/) || String(result).match(/870974:.*/)) {
+        DbcAddiRelations.hasAnalysis( pid, result );
+      }
     }
-    //End search based on part titles like fairy tales, poems and short stories
+
     Log.info ("End hasAnalysis" );
 
   };
+
+
+//TODO: VERSION OF hasAnalysis that does not work on frosty - needs to be fixed	
+//	that.hasAnalysis = function ( xml, pid) {
+//
+//    Log.info ("Start hasAnalysis" );
+//
+//    // Converting the xml-string to an XMLObject which e4x can handle:
+//    var katalogXML = XmlUtil.fromString( xml );
+//
+//    var titles = [];
+//
+//    for each (var child in katalogXML.dkabm::record.dc::title) {
+//        var title = String(child);
+//        title = Normalize.removeSpecialCharacters(title); //normalizing because the field title in dc stream in which we search is normalized
+//        titles.push (title);
+//    }
+//
+//    //search based on part titles like fairy tales, poems and short stories
+//    for each (var child in katalogXML.*.*.*.(@tag=='530').*.(@code=='t')) {
+//        var partTitle = String(child);
+//        partTitle = Normalize.removeSpecialCharacters(partTitle); //normalizing because the field title in dc stream in which we search is normalized
+//        titles.push (partTitle);
+//    }
+//    var creators = [];
+//    for each (child in katalogXML.dkabm::record.dc::creator) {
+//      var creator = String(child);
+//      creator = Normalize.removeSpecialCharacters(creator);
+//      creators.push (creator); //creator with possible birth year
+//
+//      if (creator.match(/\(/)) { //if creator had birth year remove it, and add to creators
+//				creator = creator.replace(/(.*)\(.*\)/, "$1");
+//        creators.push (creator); //creator without birth year 
+////        creator = "NOBIRTH:" + creator;			//TODO is this pointless since the dc stream for subject does not contain "NOBIRTH" should it be added?
+////        creators.push (creator); //creator NOBIRTH
+//      }
+//      
+//    }    
+//    for (var x = 0; x < titles.length; ++x ) {
+//     for (var y = 0; y < creators.length; ++y){
+//        var query = "subject = " + titles[x] + " AND subject = " + creators[y] + " AND ( label = analyse OR label = littolk )";
+//        var results = FedoraCQLSearch.search(query);
+//
+//        //add relations based on the results
+//        for (var i = 0; i < results.length; ++i) {
+//          var result = results[i]; //
+//          if (String(result).match(/150005:.*/) || String(result).match(/870974:.*/)) {
+//            DbcAddiRelations.hasAnalysis(pid, result);
+//          }
+//        } 
+//     }
+//    }
+//    //End search based on part titles like fairy tales, poems and short stories
+//    Log.info ("End hasAnalysis" );
+//
+//  };
 
   that.isPartOfManifestation = function ( xml, pid) {
 
