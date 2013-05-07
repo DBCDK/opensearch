@@ -857,10 +857,6 @@ var Relations = function() {
 
     // Converting the xml-string to an XMLObject which e4x can handle:
     var imageXML = XmlUtil.fromString( xml );
-//    if (String(imageXML.oso::object.oso::identifier).match(/\|150049/)) {
-//      
-//    }
-//    var identifier = String(imageXML.oso::object.oso::identifier).replace( /(.*)image\|(.*)/, "$2:$1");
     var identifier = String(imageXML.oso::object.oso::identifier).replace( /(.*)image.*\|(.*)/, "$2:$1");
 
     Log.info( "Identifier isImageOf: " + identifier );
