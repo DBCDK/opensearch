@@ -972,13 +972,13 @@ var Relations = function() {
           DbcAddiRelations.hasOnlineAccess( pid, String(child) );
         }
       }
-    } else if (String(manifestationXml.dkabm::record.ac::source).match(/eReolen/)) {
+    } else if (String(manifestationXML.dkabm::record.ac::source).match(/eReolen/)) {
       for each (child in manifestationXML.dkabm::record.dc::identifier) {
         if (String(child.@xsi::type).match("dcterms:URI") && String(child).match(/ereolen/)) {
           DbcAddiRelations.hasOnlineAccess( pid, String(child) );
         }
       }     
-    } else if (String(manifestationXml.dkabm::record.ac::source).match(/Ebib/)) {
+    } else if (String(manifestationXML.dkabm::record.ac::source).match(/Ebib/)) {
       for each (child in manifestationXML.dkabm::record.dc::identifier) {
         if (String(child.@xsi::type).match("dcterms:URI") && String(child).match(/ebib/)) {
           DbcAddiRelations.hasOnlineAccess( pid, String(child) );
