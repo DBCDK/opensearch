@@ -966,12 +966,24 @@ var Relations = function() {
     var manifestationXML = XmlUtil.fromString( xml );
     
     var child;
-    if (String(manifestationXML.dkabm::record.ac::source).match(/Litteratursiden|Faktalink|Forfatterweb|Spil og Medier|Netlydbog|eReolen|Safari Books Online|Historisk Atlas|Danske Billeder|Det Danske Filminstitut/)) {
+    if (String(manifestationXML.dkabm::record.ac::source).match(/Litteratursiden|Faktalink|Forfatterweb|Spil og Medier|Netlydbog|Safari Books Online|Historisk Atlas|Danske Billeder|Det Danske Filminstitut/)) {
       for each (child in manifestationXML.dkabm::record.dc::identifier) {
         if (String(child.@xsi::type).match("dcterms:URI")) {
           DbcAddiRelations.hasOnlineAccess( pid, String(child) );
         }
       }
+    } else if (String(manifestationXml.dkabm::record.ac::source).match(/eReolen/)) {
+      for each (child in manifestationXML.dkabm::record.dc::identifier) {
+        if (String(child.@xsi::type).match("dcterms:URI") && String(child).match(/ereolen/)) {
+          DbcAddiRelations.hasOnlineAccess( pid, String(child) );
+        }
+      }     
+    } else if (String(manifestationXml.dkabm::record.ac::source).match(/Ebib/)) {
+      for each (child in manifestationXML.dkabm::record.dc::identifier) {
+        if (String(child.@xsi::type).match("dcterms:URI") && String(child).match(/ebib/)) {
+          DbcAddiRelations.hasOnlineAccess( pid, String(child) );
+        }
+      }  
 		} else if (String(manifestationXML.dkabm::record.ac::identifier).match(/\|150023/)) {
 				DbcAddiRelations.hasOnlineAccess ( pid, "http://ic.galegroup.com/ic/scic/ReferenceDetailsPage/ReferenceDetailsWindow?displayGroupName=Reference&disableHighlighting=false&prodId=SCIC&action=e&windowstate=normal&catId=&documentId=GALE%7C" + String(manifestationXML.dkabm::record.dc::identifier) + "&mode=view[GALESUFFIX]");			
     } else if (String(manifestationXML.dkabm::record.ac::source).match(/Ebsco|Ebrary/)){
