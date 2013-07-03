@@ -124,13 +124,13 @@ var DcCreator = function(){
       }
     }
 
-    for each( child in originalXml.marcx::collection.marcx::record.marcx::datafield.( @tag == "014" ) ) {
-        var relationId = String( child.marcx::subfield.( @code == "a" ) ).replace( /-/g, "" );
-        if ( child.marcx::subfield.( @code == "x" ) !== "" ) {
-            var relationType = String( child.marcx::subfield.( @code == "x" ) );
-            dcXml.oai_dc::dc += DcStreamCreator.createElementNoNormalize( relationType + ":" + relationId, "relation", dc );
-        } else if ( child.marcx::subfield.( @code == "a" ) !== "" ) {
-            dcXml.oai_dc::dc += DcStreamCreator.createElementNoNormalize( relationId, "relation", dc );
+    for each( child in originalXml.*.*.*.( @tag == "014" ) ) {
+        var relationId = String( child.*.( @code == "a" ) ).replace( /-/g, "" );
+        if ( child.*.( @code == "x" ) !== "" ) {
+            var relationType = String( child.*.( @code == "x" ) );
+            dcXml.oai_dc::dc += DcCreator.createElementNoNormalize( relationType + ":" + relationId, "relation", dc );
+        } else if ( child.*.( @code == "a" ) !== "" ) {
+            dcXml.oai_dc::dc += DcCreator.createElementNoNormalize( relationId, "relation", dc );
         }
     }
 
