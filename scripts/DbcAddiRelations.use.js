@@ -98,4 +98,45 @@ const DbcAddiRelations = function() {
         Log.info( "End hasCreatorDescription" );
     };
 
+    /**
+    * Will also set the inverse relation http://oss.dbc.dk/rdf/dbcbib#continues
+    */
+    that.continuedIn = function ( pid1, pid2 ){
+        Log.info( "Start continuedIn" );
+        scriptClass.createRelation( pid2, "http://oss.dbc.dk/rdf/dbcbib#continues", pid1);
+        scriptClass.createRelation( pid1, "http://oss.dbc.dk/rdf/dbcaddi#continuedIn", pid2 );
+        Log.info( "End continuedIn" );
+    };
+
+    /**
+    * Will also set the inverse relation http://oss.dbc.dk/rdf/dbcbibaddi#continuedIn
+    */
+    that.continues = function ( pid1, pid2 ){
+        Log.info( "Start continues" );
+        scriptClass.createRelation( pid2, "http://oss.dbc.dk/rdf/dbcaddi#continuedIn", pid1);
+        scriptClass.createRelation( pid1, "http://oss.dbc.dk/rdf/dbcaddi#continues", pid2 );
+        Log.info( "End continues" );
+    };
+
+
+    /**
+    * Will also set the inverse relation http://oss.dbc.dk/rdf/dbcbib#discusses
+    */
+    that.discussedIn = function ( pid1, pid2 ){
+        Log.info( "Start discussedIn" );
+        scriptClass.createRelation( pid2, "http://oss.dbc.dk/rdf/dbcbib#discusses", pid1);
+        scriptClass.createRelation( pid1, "http://oss.dbc.dk/rdf/dbcaddi#discussedIn", pid2 );
+        Log.info( "End discussedIn" );
+    };
+
+    /**
+    * Will also set the inverse relation http://oss.dbc.dk/rdf/dbcbibaddi#discussedIn
+    */
+    that.discusses = function ( pid1, pid2 ){
+        Log.info( "Start discusses" );
+        scriptClass.createRelation( pid2, "http://oss.dbc.dk/rdf/dbcaddi#discussedIn", pid1);
+        scriptClass.createRelation( pid1, "http://oss.dbc.dk/rdf/dbcaddi#discusses", pid2 );
+        Log.info( "End discusses" );
+    };
+
 return that;}();
