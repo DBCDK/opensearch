@@ -1200,8 +1200,21 @@ var Relations = function() {
     // Converting the xml-string to an XMLObject which e4x can handle:
     var manifestationXML = XmlUtil.fromString( xml );
 
+    var identifier = (String(manifestationXML.dkabm::record.ac::identifier)).replace(/(.*)\|.*/, "$1");
 
+    Log.info( "Identifier: " + identifier );    
+    Log.info( "pid: " + pid );
 
+    //search for debates of this article
+    var results = FedoraPIDSearch.relation("DEB:" + identifier);
+  
+      for ( var i = 0; i < results.length; ++i ) {
+        var result = results[i];
+  
+        if (!String(result).match(/work:.*/)) {
+          DbcAddiRelations.discussedIn( pid, result);
+        }
+      }
 
     Log.info ("End discussedIn" );
 
@@ -1215,7 +1228,24 @@ var Relations = function() {
     // Converting the xml-string to an XMLObject which e4x can handle:
     var manifestationXML = XmlUtil.fromString( xml );
 
-//husk at matche for 014 DEB i delfelt x
+
+    if (String(manifestationXML.*.*.*.(@tag=='014').*.(@code=='x')).match(/DEB/)) {
+      var identifier = String(manifestationXML.*.*.*.(@tag=='014').*.(@code=='a'));
+
+    Log.info( "Identifier: " + identifier );    
+    Log.info( "pid: " + pid );
+
+    //search for the original article that this article is a debate of
+    var results = FedoraPIDSearch.identifier("870971:" + identifier);
+  
+      for ( var i = 0; i < results.length; ++i ) {
+        var result = results[i];
+  
+        if (!String(result).match(/work:.*/)) {
+          DbcAddiRelations.discusses( pid, result);
+        }
+      }
+    }
 
     Log.info ("End discusses" );
 
