@@ -95,3 +95,19 @@ function hasCreatorHomePage ( submitter, format, language, xml, pid ) {
 function hasOpenUrl ( submitter, format, language, xml, pid ) {
   Relations.hasOpenUrl ( xml, pid );
 }
+
+function continuedIn ( submitter, format, language, xml, pid ) {
+  Relations.continuedIn ( xml, pid );
+}
+
+function continues ( submitter, format, language, xml, pid ) {
+  Relations.continues ( xml, pid );
+}
+
+function discussedIn ( submitter, format, language, xml, pid ) {
+  Relations.discussedIn ( xml, pid );
+}
+
+function discusses ( submitter, format, language, xml, pid ) {
+  Relations.discusses ( xml, pid );
+}
