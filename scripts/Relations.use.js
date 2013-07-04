@@ -1135,6 +1135,93 @@ var Relations = function() {
 
   };
 
+  that.continuedIn = function( xml, pid ) {
+
+    Log.info ("Start continuedIn" );
+
+    // Converting the xml-string to an XMLObject which e4x can handle:
+    var manifestationXML = XmlUtil.fromString( xml );
+
+    var identifier = (String(manifestationXML.dkabm::record.ac::identifier)).replace(/(.*)\|.*/, "$1");
+
+    Log.info( "Identifier: " + identifier );    
+    Log.info( "pid: " + pid );
+
+    //search for continuations of this article
+    var results = FedoraPIDSearch.relation("FOR:" + identifier);
+  
+      for ( var i = 0; i < results.length; ++i ) {
+        var result = results[i];
+  
+        if (!String(result).match(/work:.*/)) {
+          DbcAddiRelations.continuedIn( pid, result);
+        }
+      }
+
+    Log.info ("End continuedIn" );
+
+  };
+  
+  
+  that.continues = function( xml, pid ) {
+
+    Log.info ("Start continues" );
+
+    // Converting the xml-string to an XMLObject which e4x can handle:
+    var manifestationXML = XmlUtil.fromString( xml );
+
+
+    if (String(manifestationXML.*.*.*.(@tag=='014').*.(@code=='x')).match(/FOR/)) {
+      var identifier = String(manifestationXML.*.*.*.(@tag=='014').*.(@code=='a'));
+
+    Log.info( "Identifier: " + identifier );    
+    Log.info( "pid: " + pid );
+
+    //search for the original article that this article is a continuation of
+    var results = FedoraPIDSearch.identifier("870971:" + identifier);
+  
+      for ( var i = 0; i < results.length; ++i ) {
+        var result = results[i];
+  
+        if (!String(result).match(/work:.*/)) {
+          DbcAddiRelations.continues( pid, result);
+        }
+      }
+    }
+
+    Log.info ("End continues" );
+
+  };
+  
+  that.discussedIn = function( xml, pid ) {
+
+    Log.info ("Start discussedIn" );
+
+    // Converting the xml-string to an XMLObject which e4x can handle:
+    var manifestationXML = XmlUtil.fromString( xml );
+
+
+
+
+    Log.info ("End discussedIn" );
+
+  };
+  
+
+  that.discusses = function( xml, pid ) {
+
+    Log.info ("Start discusses" );
+
+    // Converting the xml-string to an XMLObject which e4x can handle:
+    var manifestationXML = XmlUtil.fromString( xml );
+
+//husk at matche for 014 DEB i delfelt x
+
+    Log.info ("End discusses" );
+
+  };      
+
+
   return that;
 
 }();
