@@ -134,18 +134,17 @@ var DcCreator = function(){
         }
     }
 
+    for each (child in originalXml.*.*.*.(@tag == "016").*.(@code == "a")) {
+      if (String(child) !== "") {
+        dcXml.oai_dc::dc += DcCreator.createElementNoNormalize( "PartOf:" + String(child).replace( /-/g, ""), "relation", dc );
+      }
+    }
+
     for each (child in originalXml.*.*.*.(@tag == "017").*.(@code == "a")) {
       if (String(child) !== "") {
         dcXml.oai_dc::dc += DcCreator.createElementNoNormalize( "FirstEd:" + String(child).replace( /-/g, ""), "relation", dc );
       }
     }
-
-    for each (child in originalXml.*.*.*.(@tag == "016").*.(@code == "a")) {
-      if (String(child) !== "") {
-        dcXml.oai_dc::dc += DcCreator.createElementNoNormalize( "PartOf:" + String(child).replace( /-/g, ""), "relation", dc );
-	  	}
-    }
-
 
     var dcString = String(dcXml);
 
