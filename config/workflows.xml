@@ -3770,6 +3770,18 @@
         <arg name="entryfunction" value="hasOnlineAccess"/>
       </args>
     </plugin>
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+      <args>
+        <arg name="javascript" value="simple_relation.js"/>
+        <arg name="entryfunction" value="discussedIn"/>
+      </args>
+    </plugin>   
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+      <args>
+        <arg name="javascript" value="simple_relation.js"/>
+        <arg name="entryfunction" value="discusses"/>
+      </args>
+    </plugin> 
   </workflow>
   <workflow format="artikler" submitter="870971">
     <plugin class="dk.dbc.opensearch.plugins.ForceFedoraPid"/>
