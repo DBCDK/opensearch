@@ -825,7 +825,9 @@ var Relations = function() {
     var manifestationXML = XmlUtil.fromString( xml );
 
     var child;
-    if ( String(manifestationXML.dkabm::record.dc::subject.(@xsi::type == 'dkdcplus:genre') ) !== "fiktion" ) {
+    //if ( String(manifestationXML.dkabm::record.dc::subject.(@xsi::type == 'dkdcplus:genre') ) !== "fiktion" ) {
+    Log.info ("kwc1=", String(manifestationXML.dkabm::record.dc::subject.(@xsi::type == 'dkdcplus:genre') ))
+    //(@tag=='538')
       for each(child in manifestationXML.dkabm::record.dc::subject) {
         if (!String(child.@xsi::type).match("dkdcplus:genre")) {
   	      var subject = String(child);
@@ -846,7 +848,7 @@ var Relations = function() {
   	      }
   			}
       }
-    }
+    //}
     Log.info ("End hasSubjectDescription" );
 
   };
