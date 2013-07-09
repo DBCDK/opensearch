@@ -825,28 +825,28 @@ var Relations = function() {
     var manifestationXML = XmlUtil.fromString( xml );
 
     var child;
-
-    for each(child in manifestationXML.dkabm::record.dc::subject) {
-      if (!String(child.@xsi::type).match("dkdcplus:genre")) {
-	      var subject = String(child);
-	
-	      Log.info( "Subject: " + subject );
-	      Log.info( "pid: " + pid );
-	
-	      var results = FedoraPIDSearch.title( Normalize.removeSpecialCharacters( subject ) );
-	
-	      for ( var i = 0; i < results.length; ++i ) {
-	        var result = results[i];
-	
-	        Log.info( "result: " + result );
-	
-	        if (String(result).match(/150012:.*/) || String(result).match(/150017:.*/) || String(result).match(/150033:.*/) || String(result).match(/150040:.*/)) {
-	          DbcAddiRelations.hasSubjectDescription( pid, result );
-	        }
-	      }
-			}
+    if ( String(manifestationXML.dkabm::record.dc::subject.(@xsi::type == 'dkdcplus:genre') ) !== "fiktion" ) {
+      for each(child in manifestationXML.dkabm::record.dc::subject) {
+        if (!String(child.@xsi::type).match("dkdcplus:genre")) {
+  	      var subject = String(child);
+  	
+  	      Log.info( "Subject: " + subject );
+  	      Log.info( "pid: " + pid );
+  	
+  	      var results = FedoraPIDSearch.title( Normalize.removeSpecialCharacters( subject ) );
+  	
+  	      for ( var i = 0; i < results.length; ++i ) {
+  	        var result = results[i];
+  	
+  	        Log.info( "result: " + result );
+  	
+  	        if (String(result).match(/150012:.*/) || String(result).match(/150017:.*/) || String(result).match(/150033:.*/) || String(result).match(/150040:.*/)) {
+  	          DbcAddiRelations.hasSubjectDescription( pid, result );
+  	        }
+  	      }
+  			}
+      }
     }
-
     Log.info ("End hasSubjectDescription" );
 
   };
