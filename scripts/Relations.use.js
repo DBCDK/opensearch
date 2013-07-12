@@ -829,7 +829,6 @@ var Relations = function() {
       for each(child in manifestationXML.dkabm::record.dc::subject) {
         if (String(child.@xsi::type).match("dkdcplus:genre")) {  //the reason for having two if statements here instead of a syntax like child.(@xsi::type == 'dkdcplus:genre') 
           if (String (child.*) === "fiktion" ) {                 //is because of a bug in the version of rhino used in opensearch "brond2" see bug 15570
-            print ("\nfiktion\n")  //REMOVE
             return;  //no hasSubjectDescription on fiktion records
           }
         }
@@ -844,7 +843,6 @@ var Relations = function() {
         }
       } 
       for (var i = 0; i < subjects.length; ++i ) {         
-        print (subjects[i] + "\n");  //REMOVE
         var results = FedoraPIDSearch.title( Normalize.removeSpecialCharacters( subjects[i] ) );
 	
 	      for ( var j = 0; j < results.length; ++j ) {
