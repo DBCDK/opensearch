@@ -825,30 +825,38 @@ var Relations = function() {
     var manifestationXML = XmlUtil.fromString( xml );
 
     var child;
-    //if ( String(manifestationXML.dkabm::record.dc::subject.(@xsi::type == 'dkdcplus:genre') ) !== "fiktion" ) {
-    Log.info ("kwc1=", String(manifestationXML.dkabm::record.dc::subject.(@xsi::type == 'dkdcplus:genre') ))
-    //(@tag=='538')
+    var subjects = [];
       for each(child in manifestationXML.dkabm::record.dc::subject) {
+        if (String(child.@xsi::type).match("dkdcplus:genre")) {  //the reason for having two if statements here instead of a syntax like child.(@xsi::type == 'dkdcplus:genre') 
+          if (String (child.*) === "fiktion" ) {                 //is because of a bug in the version of rhino used in opensearch "brond2" see bug 15570
+            print ("\nfiktion\n")  //REMOVE
+            return;  //no hasSubjectDescription on fiktion records
+          }
+        }
         if (!String(child.@xsi::type).match("dkdcplus:genre")) {
   	      var subject = String(child);
   	
   	      Log.info( "Subject: " + subject );
   	      Log.info( "pid: " + pid );
-  	
-  	      var results = FedoraPIDSearch.title( Normalize.removeSpecialCharacters( subject ) );
-  	
-  	      for ( var i = 0; i < results.length; ++i ) {
-  	        var result = results[i];
-  	
-  	        Log.info( "result: " + result );
-  	
-  	        if (String(result).match(/150012:.*/) || String(result).match(/150017:.*/) || String(result).match(/150033:.*/) || String(result).match(/150040:.*/)) {
-  	          DbcAddiRelations.hasSubjectDescription( pid, result );
-  	        }
-  	      }
-  			}
+          
+          subjects.push (subject); 	      
+
+        }
+      } 
+      for (var i = 0; i < subjects.length; ++i ) {         
+        print (subjects[i] + "\n");  //REMOVE
+        var results = FedoraPIDSearch.title( Normalize.removeSpecialCharacters( subjects[i] ) );
+	
+	      for ( var j = 0; j < results.length; ++j ) {
+	        var result = results[j];
+	
+	        Log.info( "result: " + result );
+	
+	        if (String(result).match(/150012:.*/) || String(result).match(/150017:.*/) || String(result).match(/150033:.*/) || String(result).match(/150040:.*/)) {
+	          DbcAddiRelations.hasSubjectDescription( pid, result );
+	        }
+	      }
       }
-    //}
     Log.info ("End hasSubjectDescription" );
 
   };
