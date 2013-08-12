@@ -1203,7 +1203,7 @@
       </args>
     </plugin>
   </workflow>		
-    <workflow format="ebrary" submitter="150035">
+  <workflow format="ebrary" submitter="150035">
     <plugin class="dk.dbc.opensearch.plugins.ForceFedoraPid"/>
     <plugin class="dk.dbc.opensearch.plugins.XMLDCHarvester">
       <args>
@@ -1265,7 +1265,7 @@
       </args>
     </plugin>
   </workflow>
-    <workflow format="oxwest" submitter="150036">
+  <workflow format="oxwest" submitter="150036">
     <plugin class="dk.dbc.opensearch.plugins.ForceFedoraPid"/>
     <plugin class="dk.dbc.opensearch.plugins.XMLDCHarvester">
       <args>
@@ -1526,7 +1526,7 @@
       </args>
     </plugin>
   </workflow>
-    <workflow format="dfi" submitter="150049">
+  <workflow format="dfi" submitter="150049">
     <plugin class="dk.dbc.opensearch.plugins.ForceFedoraPid"/>
     <plugin class="dk.dbc.opensearch.plugins.XMLDCHarvester">
       <args>
@@ -1628,7 +1628,7 @@
       </args>
     </plugin>
   </workflow>
-	<workflow format="lokalbibl" submitter="159002">
+  <workflow format="lokalbibl" submitter="159002">
     <plugin class="dk.dbc.opensearch.plugins.ForceFedoraPid"/>
     <plugin class="dk.dbc.opensearch.plugins.XMLDCHarvester">
       <args>
