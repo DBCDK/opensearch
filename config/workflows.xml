@@ -11,7 +11,7 @@
         <arg name="entryfunction" value="dcFromMarc"/>
       </args>
     </plugin>
-		<plugin class="dk.dbc.opensearch.plugins.PurgeRelations"/>
+    <plugin class="dk.dbc.opensearch.plugins.PurgeRelations"/>
     <plugin class="dk.dbc.opensearch.plugins.Store">
       <!-- The args for the Store plugin can specify a script filename and
            a function name. This function will then be called to determine if the
@@ -20,15 +20,15 @@
       <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-				<arg name="skipUnchangedPosts" value="false"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
       <args>
         <arg name="javascript" value="workmatch_relation_functions.js"/>
-	      <arg name="searchfunction" value="generateSearchPairs"/>
-	      <arg name="matchfunction" value="checkmatch"/>
-	      <arg name="createobjectfunction" value="makeworkobject"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
@@ -55,13 +55,13 @@
         <arg name="entryfunction" value="hasCreatorDescription"/>
       </args>
     </plugin>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasCreatorHomePage"/>
       </args>
     </plugin>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasDescriptionFromPublisher"/>
@@ -73,7 +73,7 @@
         <arg name="entryfunction" value="hasSubjectDescription"/>
       </args>
     </plugin>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasOpenUrl"/>
@@ -93,15 +93,15 @@
         <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-				<arg name="skipUnchangedPosts" value="false"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
-	  </plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
       <args>
         <arg name="javascript" value="workmatch_relation_functions.js"/>
-	      <arg name="searchfunction" value="generateSearchPairs"/>
-	      <arg name="matchfunction" value="checkmatch"/>
-	      <arg name="createobjectfunction" value="makeworkobject"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
@@ -122,13 +122,13 @@
         <arg name="entryfunction" value="hasCreatorDescription"/>
       </args>
     </plugin>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasCreatorHomePage"/>
       </args>
     </plugin>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasDescriptionFromPublisher"/>
@@ -1143,19 +1143,19 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectOupsStatus"/>
       </args>
-		</plugin>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    </plugin>
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasOnlineAccess"/>
       </args>
     </plugin>
   </workflow>
-		<workflow format="danskedyr" submitter="150033">
+  <workflow format="danskedyr" submitter="150033">
     <plugin class="dk.dbc.opensearch.plugins.ForceFedoraPid"/>
     <plugin class="dk.dbc.opensearch.plugins.XMLDCHarvester">
       <args>
@@ -1164,25 +1164,25 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectOupsStatus"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="isSubjectDescriptionOf"/>
       </args>
     </plugin>
-		 <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+  <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasOnlineAccess"/>
       </args>
     </plugin>		
   </workflow>
-		<workflow format="religion" submitter="150034">
+  <workflow format="religion" submitter="150034">
     <plugin class="dk.dbc.opensearch.plugins.ForceFedoraPid"/>
     <plugin class="dk.dbc.opensearch.plugins.XMLDCHarvester">
       <args>
@@ -1191,12 +1191,12 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectOupsStatus"/>
       </args>
-		</plugin>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    </plugin>
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasOnlineAccess"/>
@@ -1215,15 +1215,15 @@
       <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-		<arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="true"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
       <args>
         <arg name="javascript" value="workmatch_relation_functions.js"/>
-	    <arg name="searchfunction" value="generateSearchPairs"/>
-	    <arg name="matchfunction" value="checkmatch"/>
-	    <arg name="createobjectfunction" value="makeworkobject"/>
+      <arg name="searchfunction" value="generateSearchPairs"/>
+      <arg name="matchfunction" value="checkmatch"/>
+      <arg name="createobjectfunction" value="makeworkobject"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
@@ -1233,7 +1233,7 @@
       </args>
     </plugin>
   </workflow>
-		<workflow format="oxprem" submitter="150036">
+  <workflow format="oxprem" submitter="150036">
     <plugin class="dk.dbc.opensearch.plugins.ForceFedoraPid"/>
     <plugin class="dk.dbc.opensearch.plugins.XMLDCHarvester">
       <args>
@@ -1242,14 +1242,14 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store"/>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasOnlineAccess"/>
       </args>
     </plugin>
   </workflow>
-		<workflow format="oxlit" submitter="150036">
+  <workflow format="oxlit" submitter="150036">
     <plugin class="dk.dbc.opensearch.plugins.ForceFedoraPid"/>
     <plugin class="dk.dbc.opensearch.plugins.XMLDCHarvester">
       <args>
@@ -1258,14 +1258,14 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store"/>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasOnlineAccess"/>
       </args>
     </plugin>
   </workflow>
-		<workflow format="oxwest" submitter="150036">
+    <workflow format="oxwest" submitter="150036">
     <plugin class="dk.dbc.opensearch.plugins.ForceFedoraPid"/>
     <plugin class="dk.dbc.opensearch.plugins.XMLDCHarvester">
       <args>
@@ -1274,14 +1274,14 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store"/>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasOnlineAccess"/>
       </args>
     </plugin>
   </workflow>		
-	<workflow format="forlag" submitter="150039">
+  <workflow format="forlag" submitter="150039">
     <plugin class="dk.dbc.opensearch.plugins.ForceFedoraPid"/>
     <plugin class="dk.dbc.opensearch.plugins.XMLDCHarvester">
       <args>
@@ -1290,19 +1290,19 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectOupsStatus"/>
       </args>
-		</plugin>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    </plugin>
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="isDescriptionFromPublisherOf"/>
       </args>
     </plugin>
   </workflow>
-		<workflow format="verdyr" submitter="150040">
+  <workflow format="verdyr" submitter="150040">
     <plugin class="dk.dbc.opensearch.plugins.ForceFedoraPid"/>
     <plugin class="dk.dbc.opensearch.plugins.XMLDCHarvester">
       <args>
@@ -1311,25 +1311,25 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+    <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectOupsStatus"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="isSubjectDescriptionOf"/>
       </args>
     </plugin>
-		 <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasOnlineAccess"/>
       </args>
     </plugin>		
   </workflow>
-	<workflow format="dkbilled" submitter="150042">
+  <workflow format="dkbilled" submitter="150042">
     <plugin class="dk.dbc.opensearch.plugins.ForceFedoraPid"/>
     <plugin class="dk.dbc.opensearch.plugins.XMLDCHarvester">
       <args>
@@ -1338,12 +1338,12 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectDkabm"/>
       </args>
-		</plugin>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    </plugin>
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasOnlineAccess"/>
@@ -1354,7 +1354,7 @@
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasImage"/>
       </args>
-    </plugin>			
+    </plugin>
   </workflow>
   <workflow format="image" submitter="150042">
     <plugin class="dk.dbc.opensearch.plugins.ForceFedoraPid"/>
@@ -1365,11 +1365,11 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectDkabm"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
@@ -1377,7 +1377,7 @@
       </args>
     </plugin>
   </workflow>	
-		<workflow format="atlas" submitter="150043">
+  <workflow format="atlas" submitter="150043">
     <plugin class="dk.dbc.opensearch.plugins.ForceFedoraPid"/>
     <plugin class="dk.dbc.opensearch.plugins.XMLDCHarvester">
       <args>
@@ -1386,12 +1386,12 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectDkabm"/>
       </args>
-		</plugin>
- 		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    </plugin>
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasOnlineAccess"/>
@@ -1413,11 +1413,11 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectDkabm"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
@@ -1425,7 +1425,7 @@
       </args>
     </plugin>
   </workflow>	
-		<workflow format="safari" submitter="150044">
+  <workflow format="safari" submitter="150044">
     <plugin class="dk.dbc.opensearch.plugins.ForceFedoraPid"/>
     <plugin class="dk.dbc.opensearch.plugins.XMLDCHarvester">
       <args>
@@ -1434,27 +1434,27 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
       <args>
         <arg name="javascript" value="workmatch_relation_functions.js"/>
-	      <arg name="searchfunction" value="generateSearchPairs"/>
-	      <arg name="matchfunction" value="checkmatch"/>
-	      <arg name="createobjectfunction" value="makeworkobject"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
       </args>
     </plugin>		
- 		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasOnlineAccess"/>
       </args>
     </plugin>
   </workflow>
-		<workflow format="katalog" submitter="150045">
+  <workflow format="katalog" submitter="150045">
     <plugin class="dk.dbc.opensearch.plugins.ForceFedoraPid"/>
     <plugin class="dk.dbc.opensearch.plugins.XMLDCHarvester">
       <args>
@@ -1463,17 +1463,17 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectOupsStatus"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
       <args>
         <arg name="javascript" value="workmatch_relation_functions.js"/>
-	      <arg name="searchfunction" value="generateSearchPairs"/>
-	      <arg name="matchfunction" value="checkmatch"/>
-	      <arg name="createobjectfunction" value="makeworkobject"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
       </args>
     </plugin>		
 <!-- 		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
@@ -1483,7 +1483,7 @@
       </args>
     </plugin>
 -->
-  </workflow>										
+  </workflow>
   <workflow format="ebogsbib" submitter="150048">
     <plugin class="dk.dbc.opensearch.plugins.ForceFedoraPid"/>
     <plugin class="dk.dbc.opensearch.plugins.XMLDCHarvester">
@@ -1493,18 +1493,18 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-		<arg name="skipUnchangedPosts" value="false"/>
+    <arg name="skipUnchangedPosts" value="false"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
       <args>
           <arg name="javascript" value="workmatch_relation_functions.js"/>
-	      <arg name="searchfunction" value="generateSearchPairs"/>
-	      <arg name="matchfunction" value="checkmatch"/>
-	      <arg name="createobjectfunction" value="makeworkobject"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
       </args>
     </plugin>   
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
@@ -1513,7 +1513,7 @@
         <arg name="entryfunction" value="hasReview"/>
       </args>
     </plugin>
-	<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasDescriptionFromPublisher"/>
@@ -1524,7 +1524,7 @@
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasOnlineAccess"/>
       </args>
-    </plugin>		
+    </plugin>
   </workflow>
     <workflow format="dfi" submitter="150049">
     <plugin class="dk.dbc.opensearch.plugins.ForceFedoraPid"/>
@@ -1551,7 +1551,7 @@
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasImage"/>
       </args>
-    </plugin>     
+    </plugin>
   </workflow>
   <workflow format="image" submitter="150049">
     <plugin class="dk.dbc.opensearch.plugins.ForceFedoraPid"/>
@@ -1573,7 +1573,7 @@
         <arg name="entryfunction" value="isImageOf"/>
       </args>
     </plugin>
-  </workflow> 
+  </workflow>
   <workflow format="katalog" submitter="150053">
     <plugin class="dk.dbc.opensearch.plugins.ForceFedoraPid"/>
     <plugin class="dk.dbc.opensearch.plugins.XMLDCHarvester">
@@ -1638,18 +1638,18 @@
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.PurgeRelations"/>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-				<arg name="skipUnchangedPosts" value="false"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
       <args>
         <arg name="javascript" value="workmatch_relation_functions.js"/>
-	      <arg name="searchfunction" value="generateSearchPairs"/>
-	      <arg name="matchfunction" value="checkmatch"/>
-	      <arg name="createobjectfunction" value="makeworkobject"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
@@ -1668,18 +1668,18 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-				<arg name="skipUnchangedPosts" value="false"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
       <args>
         <arg name="javascript" value="workmatch_relation_functions.js"/>
-	      <arg name="searchfunction" value="generateSearchPairs"/>
-	      <arg name="matchfunction" value="checkmatch"/>
-	      <arg name="createobjectfunction" value="makeworkobject"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
@@ -1700,7 +1700,7 @@
         <arg name="entryfunction" value="hasCreatorDescription"/>
       </args>
     </plugin>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasCreatorHomePage"/>
@@ -1719,7 +1719,7 @@
       </args>
     </plugin>
   </workflow>
-    <workflow format="katalog" submitter="714700">
+  <workflow format="katalog" submitter="714700">
     <plugin class="dk.dbc.opensearch.plugins.ForceFedoraPid"/>
     <plugin class="dk.dbc.opensearch.plugins.XMLDCHarvester">
       <args>
@@ -1728,18 +1728,18 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-				<arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="true"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
       <args>
         <arg name="javascript" value="workmatch_relation_functions.js"/>
-	      <arg name="searchfunction" value="generateSearchPairs"/>
-	      <arg name="matchfunction" value="checkmatch"/>
-	      <arg name="createobjectfunction" value="makeworkobject"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
@@ -1760,7 +1760,7 @@
         <arg name="entryfunction" value="hasCreatorDescription"/>
       </args>
     </plugin>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasCreatorHomePage"/>
@@ -1788,18 +1788,18 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-				<arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="true"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
       <args>
         <arg name="javascript" value="workmatch_relation_functions.js"/>
-	      <arg name="searchfunction" value="generateSearchPairs"/>
-	      <arg name="matchfunction" value="checkmatch"/>
-	      <arg name="createobjectfunction" value="makeworkobject"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
@@ -1819,8 +1819,8 @@
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasCreatorDescription"/>
       </args>
-		</plugin>
-	  <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    </plugin>
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasCreatorHomePage"/>
@@ -1848,18 +1848,18 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-				<arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="true"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
       <args>
         <arg name="javascript" value="workmatch_relation_functions.js"/>
-	      <arg name="searchfunction" value="generateSearchPairs"/>
-	      <arg name="matchfunction" value="checkmatch"/>
-	      <arg name="createobjectfunction" value="makeworkobject"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
@@ -1880,7 +1880,7 @@
         <arg name="entryfunction" value="hasCreatorDescription"/>
       </args>
     </plugin>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasCreatorHomePage"/>
@@ -1908,18 +1908,18 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-				<arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="true"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
       <args>
         <arg name="javascript" value="workmatch_relation_functions.js"/>
-	      <arg name="searchfunction" value="generateSearchPairs"/>
-	      <arg name="matchfunction" value="checkmatch"/>
-	      <arg name="createobjectfunction" value="makeworkobject"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
@@ -1940,7 +1940,7 @@
         <arg name="entryfunction" value="hasCreatorDescription"/>
       </args>
     </plugin>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasCreatorHomePage"/>
@@ -1958,7 +1958,7 @@
         <arg name="entryfunction" value="hasOpenUrl"/>
       </args>
     </plugin>
-  </workflow> 
+  </workflow>
   <workflow format="katalog" submitter="717500">
     <plugin class="dk.dbc.opensearch.plugins.ForceFedoraPid"/>
     <plugin class="dk.dbc.opensearch.plugins.XMLDCHarvester">
@@ -1968,18 +1968,18 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-				<arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="true"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
       <args>
         <arg name="javascript" value="workmatch_relation_functions.js"/>
-	      <arg name="searchfunction" value="generateSearchPairs"/>
-	      <arg name="matchfunction" value="checkmatch"/>
-	      <arg name="createobjectfunction" value="makeworkobject"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
@@ -2000,7 +2000,7 @@
         <arg name="entryfunction" value="hasCreatorDescription"/>
       </args>
     </plugin>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasCreatorHomePage"/>
@@ -2027,19 +2027,19 @@
         <arg name="entryfunction" value="dcFromMarc"/>
       </args>
     </plugin>
-		<plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+    <plugin class="dk.dbc.opensearch.plugins.Store">
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-				<arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="true"/>
       </args>
-		</plugin>
-		<plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
+    </plugin>
+    <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
       <args>
         <arg name="javascript" value="workmatch_relation_functions.js"/>
-	      <arg name="searchfunction" value="generateSearchPairs"/>
-	      <arg name="matchfunction" value="checkmatch"/>
-	      <arg name="createobjectfunction" value="makeworkobject"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
@@ -2060,7 +2060,7 @@
         <arg name="entryfunction" value="hasCreatorDescription"/>
       </args>
     </plugin>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasCreatorHomePage"/>
@@ -2088,18 +2088,18 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-				<arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="true"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
       <args>
         <arg name="javascript" value="workmatch_relation_functions.js"/>
-	      <arg name="searchfunction" value="generateSearchPairs"/>
-	      <arg name="matchfunction" value="checkmatch"/>
-	      <arg name="createobjectfunction" value="makeworkobject"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
@@ -2120,7 +2120,7 @@
         <arg name="entryfunction" value="hasCreatorDescription"/>
       </args>
     </plugin>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasCreatorHomePage"/>
@@ -2138,7 +2138,7 @@
         <arg name="entryfunction" value="hasOpenUrl"/>
       </args>
     </plugin>
-  </workflow> 
+  </workflow>
   <workflow format="katalog" submitter="721700">
     <plugin class="dk.dbc.opensearch.plugins.ForceFedoraPid"/>
     <plugin class="dk.dbc.opensearch.plugins.XMLDCHarvester">
@@ -2148,18 +2148,18 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-				<arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="true"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
       <args>
         <arg name="javascript" value="workmatch_relation_functions.js"/>
-	      <arg name="searchfunction" value="generateSearchPairs"/>
-	      <arg name="matchfunction" value="checkmatch"/>
-	      <arg name="createobjectfunction" value="makeworkobject"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
@@ -2180,7 +2180,7 @@
         <arg name="entryfunction" value="hasCreatorDescription"/>
       </args>
     </plugin>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasCreatorHomePage"/>
@@ -2208,12 +2208,12 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-				<arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="true"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
       <args>
         <arg name="javascript" value="workmatch_relation_functions.js"/>
@@ -2240,7 +2240,7 @@
         <arg name="entryfunction" value="hasCreatorDescription"/>
       </args>
     </plugin>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasCreatorHomePage"/>
@@ -2268,18 +2268,18 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-				<arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="true"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
       <args>
         <arg name="javascript" value="workmatch_relation_functions.js"/>
-	      <arg name="searchfunction" value="generateSearchPairs"/>
-	      <arg name="matchfunction" value="checkmatch"/>
-	      <arg name="createobjectfunction" value="makeworkobject"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
@@ -2300,7 +2300,7 @@
         <arg name="entryfunction" value="hasCreatorDescription"/>
       </args>
     </plugin>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasCreatorHomePage"/>
@@ -2318,7 +2318,7 @@
         <arg name="entryfunction" value="hasOpenUrl"/>
       </args>
     </plugin>
-  </workflow> 
+  </workflow>
   <workflow format="katalog" submitter="724000">
     <plugin class="dk.dbc.opensearch.plugins.ForceFedoraPid"/>
     <plugin class="dk.dbc.opensearch.plugins.XMLDCHarvester">
@@ -2328,18 +2328,18 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-				<arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="true"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
       <args>
         <arg name="javascript" value="workmatch_relation_functions.js"/>
-	      <arg name="searchfunction" value="generateSearchPairs"/>
-	      <arg name="matchfunction" value="checkmatch"/>
-	      <arg name="createobjectfunction" value="makeworkobject"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
@@ -2360,7 +2360,7 @@
         <arg name="entryfunction" value="hasCreatorDescription"/>
       </args>
     </plugin>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasCreatorHomePage"/>
@@ -2388,18 +2388,18 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-				<arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="true"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
       <args>
         <arg name="javascript" value="workmatch_relation_functions.js"/>
-	      <arg name="searchfunction" value="generateSearchPairs"/>
-	      <arg name="matchfunction" value="checkmatch"/>
-	      <arg name="createobjectfunction" value="makeworkobject"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
@@ -2420,7 +2420,7 @@
         <arg name="entryfunction" value="hasCreatorDescription"/>
       </args>
     </plugin>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasCreatorHomePage"/>
@@ -2448,18 +2448,18 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-				<arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="true"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
       <args>
         <arg name="javascript" value="workmatch_relation_functions.js"/>
-	      <arg name="searchfunction" value="generateSearchPairs"/>
-	      <arg name="matchfunction" value="checkmatch"/>
-	      <arg name="createobjectfunction" value="makeworkobject"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
@@ -2480,7 +2480,7 @@
         <arg name="entryfunction" value="hasCreatorDescription"/>
       </args>
     </plugin>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasCreatorHomePage"/>
@@ -2508,18 +2508,18 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-				<arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="true"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
       <args>
         <arg name="javascript" value="workmatch_relation_functions.js"/>
-	      <arg name="searchfunction" value="generateSearchPairs"/>
-	      <arg name="matchfunction" value="checkmatch"/>
-	      <arg name="createobjectfunction" value="makeworkobject"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
@@ -2540,7 +2540,7 @@
         <arg name="entryfunction" value="hasCreatorDescription"/>
       </args>
     </plugin>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasCreatorHomePage"/>
@@ -2568,18 +2568,18 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-				<arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="true"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
       <args>
         <arg name="javascript" value="workmatch_relation_functions.js"/>
-	      <arg name="searchfunction" value="generateSearchPairs"/>
-	      <arg name="matchfunction" value="checkmatch"/>
-	      <arg name="createobjectfunction" value="makeworkobject"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
@@ -2600,7 +2600,7 @@
         <arg name="entryfunction" value="hasCreatorDescription"/>
       </args>
     </plugin>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasCreatorHomePage"/>
@@ -2628,18 +2628,18 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-				<arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="true"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
       <args>
         <arg name="javascript" value="workmatch_relation_functions.js"/>
-	      <arg name="searchfunction" value="generateSearchPairs"/>
-	      <arg name="matchfunction" value="checkmatch"/>
-	      <arg name="createobjectfunction" value="makeworkobject"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
@@ -2660,7 +2660,7 @@
         <arg name="entryfunction" value="hasCreatorDescription"/>
       </args>
     </plugin>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasCreatorHomePage"/>
@@ -2678,7 +2678,7 @@
         <arg name="entryfunction" value="hasOpenUrl"/>
       </args>
     </plugin>
-  </workflow> 
+  </workflow>
   <workflow format="katalog" submitter="746100">
     <plugin class="dk.dbc.opensearch.plugins.ForceFedoraPid"/>
     <plugin class="dk.dbc.opensearch.plugins.XMLDCHarvester">
@@ -2688,18 +2688,18 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-				<arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="true"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
       <args>
         <arg name="javascript" value="workmatch_relation_functions.js"/>
-	      <arg name="searchfunction" value="generateSearchPairs"/>
-	      <arg name="matchfunction" value="checkmatch"/>
-	      <arg name="createobjectfunction" value="makeworkobject"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
@@ -2720,7 +2720,7 @@
         <arg name="entryfunction" value="hasCreatorDescription"/>
       </args>
     </plugin>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasCreatorHomePage"/>
@@ -2748,18 +2748,18 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-				<arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="true"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
       <args>
         <arg name="javascript" value="workmatch_relation_functions.js"/>
-	      <arg name="searchfunction" value="generateSearchPairs"/>
-	      <arg name="matchfunction" value="checkmatch"/>
-	      <arg name="createobjectfunction" value="makeworkobject"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
@@ -2780,7 +2780,7 @@
         <arg name="entryfunction" value="hasCreatorDescription"/>
       </args>
     </plugin>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasCreatorHomePage"/>
@@ -2808,18 +2808,18 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-				<arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="true"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
       <args>
         <arg name="javascript" value="workmatch_relation_functions.js"/>
-	      <arg name="searchfunction" value="generateSearchPairs"/>
-	      <arg name="matchfunction" value="checkmatch"/>
-	      <arg name="createobjectfunction" value="makeworkobject"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
@@ -2840,7 +2840,7 @@
         <arg name="entryfunction" value="hasCreatorDescription"/>
       </args>
     </plugin>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasCreatorHomePage"/>
@@ -2868,18 +2868,18 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-				<arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="true"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
       <args>
         <arg name="javascript" value="workmatch_relation_functions.js"/>
-	      <arg name="searchfunction" value="generateSearchPairs"/>
-	      <arg name="matchfunction" value="checkmatch"/>
-	      <arg name="createobjectfunction" value="makeworkobject"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
@@ -2900,7 +2900,7 @@
         <arg name="entryfunction" value="hasCreatorDescription"/>
       </args>
     </plugin>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasCreatorHomePage"/>
@@ -2928,18 +2928,18 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-				<arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="true"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
       <args>
         <arg name="javascript" value="workmatch_relation_functions.js"/>
-	      <arg name="searchfunction" value="generateSearchPairs"/>
-	      <arg name="matchfunction" value="checkmatch"/>
-	      <arg name="createobjectfunction" value="makeworkobject"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
@@ -2960,7 +2960,7 @@
         <arg name="entryfunction" value="hasCreatorDescription"/>
       </args>
     </plugin>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasCreatorHomePage"/>
@@ -2988,19 +2988,19 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-				<arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="true"/>
       </args>
-		</plugin>
-		<plugin class="dk.dbc.opensearch.plugins.Store"/>
+    </plugin>
+    <plugin class="dk.dbc.opensearch.plugins.Store"/>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
       <args>
         <arg name="javascript" value="workmatch_relation_functions.js"/>
-	      <arg name="searchfunction" value="generateSearchPairs"/>
-	      <arg name="matchfunction" value="checkmatch"/>
-	      <arg name="createobjectfunction" value="makeworkobject"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
@@ -3021,7 +3021,7 @@
         <arg name="entryfunction" value="hasCreatorDescription"/>
       </args>
     </plugin>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasCreatorHomePage"/>
@@ -3049,18 +3049,18 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-				<arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="true"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
       <args>
         <arg name="javascript" value="workmatch_relation_functions.js"/>
-	      <arg name="searchfunction" value="generateSearchPairs"/>
-	      <arg name="matchfunction" value="checkmatch"/>
-	      <arg name="createobjectfunction" value="makeworkobject"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
@@ -3081,7 +3081,7 @@
         <arg name="entryfunction" value="hasCreatorDescription"/>
       </args>
     </plugin>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasCreatorHomePage"/>
@@ -3109,18 +3109,18 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-				<arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="true"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
       <args>
         <arg name="javascript" value="workmatch_relation_functions.js"/>
-	      <arg name="searchfunction" value="generateSearchPairs"/>
-	      <arg name="matchfunction" value="checkmatch"/>
-	      <arg name="createobjectfunction" value="makeworkobject"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
@@ -3141,7 +3141,7 @@
         <arg name="entryfunction" value="hasCreatorDescription"/>
       </args>
     </plugin>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasCreatorHomePage"/>
@@ -3169,18 +3169,18 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-				<arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="true"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
       <args>
         <arg name="javascript" value="workmatch_relation_functions.js"/>
-	      <arg name="searchfunction" value="generateSearchPairs"/>
-	      <arg name="matchfunction" value="checkmatch"/>
-	      <arg name="createobjectfunction" value="makeworkobject"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
@@ -3201,7 +3201,7 @@
         <arg name="entryfunction" value="hasCreatorDescription"/>
       </args>
     </plugin>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasCreatorHomePage"/>
@@ -3229,18 +3229,18 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-				<arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="true"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
       <args>
         <arg name="javascript" value="workmatch_relation_functions.js"/>
-	      <arg name="searchfunction" value="generateSearchPairs"/>
-	      <arg name="matchfunction" value="checkmatch"/>
-	      <arg name="createobjectfunction" value="makeworkobject"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
@@ -3261,7 +3261,7 @@
         <arg name="entryfunction" value="hasCreatorDescription"/>
       </args>
     </plugin>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasCreatorHomePage"/>
@@ -3289,18 +3289,18 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-				<arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="true"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
       <args>
         <arg name="javascript" value="workmatch_relation_functions.js"/>
-	      <arg name="searchfunction" value="generateSearchPairs"/>
-	      <arg name="matchfunction" value="checkmatch"/>
-	      <arg name="createobjectfunction" value="makeworkobject"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
@@ -3321,7 +3321,7 @@
         <arg name="entryfunction" value="hasCreatorDescription"/>
       </args>
     </plugin>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasCreatorHomePage"/>
@@ -3349,18 +3349,18 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-				<arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="true"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
       <args>
         <arg name="javascript" value="workmatch_relation_functions.js"/>
-	      <arg name="searchfunction" value="generateSearchPairs"/>
-	      <arg name="matchfunction" value="checkmatch"/>
-	      <arg name="createobjectfunction" value="makeworkobject"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
@@ -3381,7 +3381,7 @@
         <arg name="entryfunction" value="hasCreatorDescription"/>
       </args>
     </plugin>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasCreatorHomePage"/>
@@ -3409,18 +3409,18 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-				<arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="true"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
       <args>
         <arg name="javascript" value="workmatch_relation_functions.js"/>
-	      <arg name="searchfunction" value="generateSearchPairs"/>
-	      <arg name="matchfunction" value="checkmatch"/>
-	      <arg name="createobjectfunction" value="makeworkobject"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
@@ -3441,7 +3441,7 @@
         <arg name="entryfunction" value="hasCreatorDescription"/>
       </args>
     </plugin>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasCreatorHomePage"/>
@@ -3469,18 +3469,18 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-				<arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="true"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
       <args>
         <arg name="javascript" value="workmatch_relation_functions.js"/>
-	      <arg name="searchfunction" value="generateSearchPairs"/>
-	      <arg name="matchfunction" value="checkmatch"/>
-	      <arg name="createobjectfunction" value="makeworkobject"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
@@ -3501,7 +3501,7 @@
         <arg name="entryfunction" value="hasCreatorDescription"/>
       </args>
     </plugin>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasCreatorHomePage"/>
@@ -3529,18 +3529,18 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-				<arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="true"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
       <args>
         <arg name="javascript" value="workmatch_relation_functions.js"/>
-	      <arg name="searchfunction" value="generateSearchPairs"/>
-	      <arg name="matchfunction" value="checkmatch"/>
-	      <arg name="createobjectfunction" value="makeworkobject"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
@@ -3561,7 +3561,7 @@
         <arg name="entryfunction" value="hasCreatorDescription"/>
       </args>
     </plugin>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasCreatorHomePage"/>
@@ -3593,9 +3593,9 @@
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
       <args>
         <arg name="javascript" value="workmatch_relation_functions.js"/>
-	      <arg name="searchfunction" value="generateSearchPairs"/>
-	      <arg name="matchfunction" value="checkmatch"/>
-	      <arg name="createobjectfunction" value="makeworkobject"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
@@ -3614,18 +3614,18 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-				<arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="true"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
       <args>
         <arg name="javascript" value="workmatch_relation_functions.js"/>
-	      <arg name="searchfunction" value="generateSearchPairs"/>
-	      <arg name="matchfunction" value="checkmatch"/>
-	      <arg name="createobjectfunction" value="makeworkobject"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
@@ -3646,7 +3646,7 @@
         <arg name="entryfunction" value="hasCreatorDescription"/>
       </args>
     </plugin>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasCreatorHomePage"/>
@@ -3674,18 +3674,18 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-				<arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="true"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
       <args>
         <arg name="javascript" value="workmatch_relation_functions.js"/>
-	      <arg name="searchfunction" value="generateSearchPairs"/>
-	      <arg name="matchfunction" value="checkmatch"/>
-	      <arg name="createobjectfunction" value="makeworkobject"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
@@ -3706,7 +3706,7 @@
         <arg name="entryfunction" value="hasCreatorDescription"/>
       </args>
     </plugin>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasCreatorHomePage"/>
@@ -3734,18 +3734,18 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-				<arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="true"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
       <args>
         <arg name="javascript" value="workmatch_relation_functions.js"/>
-	      <arg name="searchfunction" value="generateSearchPairs"/>
-	      <arg name="matchfunction" value="checkmatch"/>
-	      <arg name="createobjectfunction" value="makeworkobject"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
@@ -3766,7 +3766,7 @@
         <arg name="entryfunction" value="hasCreatorDescription"/>
       </args>
     </plugin>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasCreatorHomePage"/>
@@ -3784,12 +3784,12 @@
         <arg name="entryfunction" value="hasOpenUrl"/>
       </args>
     </plugin>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
-			<args>
-  			<arg name="javascript" value="simple_relation.js" /> 
-  			<arg name="entryfunction" value="hasDescriptionFromPublisher" /> 
-  		</args>
-  	</plugin>
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+      <args>
+        <arg name="javascript" value="simple_relation.js" />
+        <arg name="entryfunction" value="hasDescriptionFromPublisher" />
+      </args>
+    </plugin>
   </workflow>
   <workflow format="anmeld" submitter="870971">
     <plugin class="dk.dbc.opensearch.plugins.ForceFedoraPid"/>
@@ -3800,12 +3800,12 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-				<arg name="skipUnchangedPosts" value="false"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
@@ -3829,13 +3829,13 @@
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="discussedIn"/>
       </args>
-    </plugin>   
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="discusses"/>
       </args>
-    </plugin> 
+    </plugin>
   </workflow>
   <workflow format="artikler" submitter="870971">
     <plugin class="dk.dbc.opensearch.plugins.ForceFedoraPid"/>
@@ -3846,12 +3846,12 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-				<arg name="skipUnchangedPosts" value="false"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
@@ -3869,31 +3869,31 @@
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasOpenUrl"/>
       </args>
-    </plugin>		
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="continuedIn"/>
       </args>
-    </plugin>   
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="continues"/>
       </args>
-    </plugin>       
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="discussedIn"/>
       </args>
-    </plugin>   
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="discusses"/>
       </args>
-    </plugin>   
+    </plugin>
   </workflow>
   <workflow format="anmeld" submitter="870973">
     <plugin class="dk.dbc.opensearch.plugins.ForceFedoraPid"/>
@@ -3904,12 +3904,12 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-				<arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="true"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
@@ -3929,7 +3929,7 @@
       </args>
     </plugin>
   </workflow>
-	<workflow format="littolk" submitter="870974">
+  <workflow format="littolk" submitter="870974">
     <plugin class="dk.dbc.opensearch.plugins.ForceFedoraPid"/>
     <plugin class="dk.dbc.opensearch.plugins.XMLDCHarvester">
       <args>
@@ -3938,11 +3938,11 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectDkabm"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
@@ -3959,12 +3959,12 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-				<arg name="skipUnchangedPosts" value="false"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
@@ -3981,18 +3981,18 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-				<arg name="skipUnchangedPosts" value="false"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
       <args>
         <arg name="javascript" value="workmatch_relation_functions.js"/>
-	      <arg name="searchfunction" value="generateSearchPairs"/>
-	      <arg name="matchfunction" value="checkmatch"/>
-	      <arg name="createobjectfunction" value="makeworkobject"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
@@ -4013,7 +4013,7 @@
         <arg name="entryfunction" value="hasCreatorDescription"/>
       </args>
     </plugin>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasCreatorHomePage"/>
@@ -4047,12 +4047,12 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-				<arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="true"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
       <args>
         <arg name="javascript" value="workmatch_relation_functions.js"/>
@@ -4074,7 +4074,7 @@
       </args>
     </plugin>
   </workflow>
-	<workflow format="katalog" submitter="830370">
+  <workflow format="katalog" submitter="830370">
     <plugin class="dk.dbc.opensearch.plugins.ForceFedoraPid"/>
     <plugin class="dk.dbc.opensearch.plugins.XMLDCHarvester">
       <args>
@@ -4149,18 +4149,18 @@
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store">
-    	<args>
+      <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-				<arg name="skipUnchangedPosts" value="false"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
-		</plugin>
+    </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
       <args>
         <arg name="javascript" value="workmatch_relation_functions.js"/>
-	      <arg name="searchfunction" value="generateSearchPairs"/>
-	      <arg name="matchfunction" value="checkmatch"/>
-	      <arg name="createobjectfunction" value="makeworkobject"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
@@ -4181,7 +4181,7 @@
         <arg name="entryfunction" value="hasCreatorDescription"/>
       </args>
     </plugin>
-		<plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="hasCreatorHomePage"/>
@@ -4205,5 +4205,5 @@
         <arg name="entryfunction" value="hasOpenUrl"/>
       </args>
     </plugin>
-  </workflow>  
+  </workflow>
 </workflows>
