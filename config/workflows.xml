@@ -440,17 +440,6 @@
       </args>
     </plugin>
   </workflow>
-  <workflow format="bonanza" submitter="150011">
-    <plugin class="dk.dbc.opensearch.plugins.ForceFedoraPid"/>
-    <plugin class="dk.dbc.opensearch.plugins.XMLDCHarvester">
-      <args>
-        <arg name="javascript" value="xmldcharvester_beta.js"/>
-        <arg name="entryfunction" value="dcFromDkabm"/>
-      </args>
-    </plugin>
-    <plugin class="dk.dbc.opensearch.plugins.PurgeRelations"/>
-    <plugin class="dk.dbc.opensearch.plugins.Store"/>
-  </workflow>
   <workflow format="dsd" submitter="150012">
     <plugin class="dk.dbc.opensearch.plugins.ForceFedoraPid"/>
     <plugin class="dk.dbc.opensearch.plugins.XMLDCHarvester">
@@ -1280,7 +1269,37 @@
         <arg name="entryfunction" value="hasOnlineAccess"/>
       </args>
     </plugin>
-  </workflow>		
+  </workflow>
+  <workflow format="ebrary" submitter="150038">
+    <plugin class="dk.dbc.opensearch.plugins.ForceFedoraPid"/>
+    <plugin class="dk.dbc.opensearch.plugins.XMLDCHarvester">
+      <args>
+        <arg name="javascript" value="xmldcharvester_beta.js"/>
+        <arg name="entryfunction" value="dcFromMarc"/>
+      </args>
+    </plugin>
+    <plugin class="dk.dbc.opensearch.plugins.Store">
+      <args>
+          <arg name="javascript" value="store_functions.js"/>
+          <arg name="entryfunction" value="isDeleteObjectMarc"/>
+          <arg name="skipUnchangedPosts" value="false"/>
+      </args>
+    </plugin>
+    <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
+      <args>
+        <arg name="javascript" value="workmatch_relation_functions.js"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
+      </args>
+    </plugin>
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+      <args>
+        <arg name="javascript" value="simple_relation.js"/>
+        <arg name="entryfunction" value="hasOnlineAccess"/>
+      </args>
+    </plugin>
+  </workflow>
   <workflow format="forlag" submitter="150039">
     <plugin class="dk.dbc.opensearch.plugins.ForceFedoraPid"/>
     <plugin class="dk.dbc.opensearch.plugins.XMLDCHarvester">
@@ -1629,6 +1648,37 @@
     </plugin>
   </workflow>
   <workflow format="lokalbibl" submitter="159002">
+    <plugin class="dk.dbc.opensearch.plugins.ForceFedoraPid"/>
+    <plugin class="dk.dbc.opensearch.plugins.XMLDCHarvester">
+      <args>
+        <arg name="javascript" value="xmldcharvester_beta.js"/>
+        <arg name="entryfunction" value="dcFromMarc"/>
+      </args>
+    </plugin>
+    <plugin class="dk.dbc.opensearch.plugins.PurgeRelations"/>
+    <plugin class="dk.dbc.opensearch.plugins.Store">
+      <args>
+        <arg name="javascript" value="store_functions.js"/>
+        <arg name="entryfunction" value="isDeleteObjectMarc"/>
+        <arg name="skipUnchangedPosts" value="false"/>
+      </args>
+    </plugin>
+    <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
+      <args>
+        <arg name="javascript" value="workmatch_relation_functions.js"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
+      </args>
+    </plugin>
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+      <args>
+        <arg name="javascript" value="simple_relation.js"/>
+        <arg name="entryfunction" value="isPartOfManifestation"/>
+      </args>
+    </plugin>
+  </workflow>
+  <workflow format="lokalbibl" submitter="159011">
     <plugin class="dk.dbc.opensearch.plugins.ForceFedoraPid"/>
     <plugin class="dk.dbc.opensearch.plugins.XMLDCHarvester">
       <args>
@@ -3725,6 +3775,240 @@
       </args>
     </plugin>
   </workflow>
+  <workflow format="katalog" submitter="830060">
+    <plugin class="dk.dbc.opensearch.plugins.ForceFedoraPid"/>
+    <plugin class="dk.dbc.opensearch.plugins.XMLDCHarvester">
+      <args>
+        <arg name="javascript" value="xmldcharvester_beta.js"/>
+        <arg name="entryfunction" value="dcFromMarc"/>
+      </args>
+    </plugin>
+    <plugin class="dk.dbc.opensearch.plugins.Store">
+      <args>
+        <arg name="javascript" value="store_functions.js"/>
+        <arg name="entryfunction" value="isDeleteObjectMarc"/>
+        <arg name="skipUnchangedPosts" value="false"/>
+      </args>
+    </plugin>
+    <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
+      <args>
+        <arg name="javascript" value="workmatch_relation_functions.js"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
+      </args>
+    </plugin>
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+      <args>
+        <arg name="javascript" value="simple_relation.js"/>
+        <arg name="entryfunction" value="hasReview"/>
+      </args>
+    </plugin>
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+      <args>
+        <arg name="javascript" value="simple_relation.js"/>
+        <arg name="entryfunction" value="hasArticle"/>
+      </args>
+    </plugin>
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+      <args>
+        <arg name="javascript" value="simple_relation.js"/>
+        <arg name="entryfunction" value="hasCreatorDescription"/>
+      </args>
+    </plugin>
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+      <args>
+        <arg name="javascript" value="simple_relation.js"/>
+        <arg name="entryfunction" value="hasCreatorHomePage"/>
+      </args>
+    </plugin>
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+      <args>
+        <arg name="javascript" value="simple_relation.js"/>
+        <arg name="entryfunction" value="hasSubjectDescription"/>
+      </args>
+    </plugin>
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+      <args>
+        <arg name="javascript" value="simple_relation.js"/>
+        <arg name="entryfunction" value="hasOnlineAccess"/>
+      </args>
+    </plugin>
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+      <args>
+        <arg name="javascript" value="simple_relation.js"/>
+        <arg name="entryfunction" value="hasOpenUrl"/>
+      </args>
+    </plugin>
+  </workflow>
+  <workflow format="ebrary" submitter="830060">
+    <plugin class="dk.dbc.opensearch.plugins.ForceFedoraPid"/>
+    <plugin class="dk.dbc.opensearch.plugins.XMLDCHarvester">
+      <args>
+        <arg name="javascript" value="xmldcharvester_beta.js"/>
+        <arg name="entryfunction" value="dcFromMarc"/>
+      </args>
+    </plugin>
+    <plugin class="dk.dbc.opensearch.plugins.Store">
+      <args>
+        <arg name="javascript" value="store_functions.js"/>
+        <arg name="entryfunction" value="isDeleteObjectMarc"/>
+        <arg name="skipUnchangedPosts" value="true"/>
+      </args>
+    </plugin>
+    <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
+      <args>
+        <arg name="javascript" value="workmatch_relation_functions.js"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
+      </args>
+    </plugin>
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+      <args>
+        <arg name="javascript" value="simple_relation.js"/>
+        <arg name="entryfunction" value="hasOnlineAccess"/>
+      </args>
+    </plugin>
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+      <args>
+        <arg name="javascript" value="simple_relation.js"/>
+        <arg name="entryfunction" value="hasOpenUrl"/>
+      </args>
+    </plugin>
+  </workflow>
+  <workflow format="katalog" submitter="830370">
+    <plugin class="dk.dbc.opensearch.plugins.ForceFedoraPid"/>
+    <plugin class="dk.dbc.opensearch.plugins.XMLDCHarvester">
+      <args>
+        <arg name="javascript" value="xmldcharvester_beta.js"/>
+        <arg name="entryfunction" value="dcFromMarc"/>
+      </args>
+    </plugin>
+    <plugin class="dk.dbc.opensearch.plugins.Store">
+      <args>
+        <arg name="javascript" value="store_functions.js"/>
+        <arg name="entryfunction" value="isDeleteObjectMarc"/>
+        <arg name="skipUnchangedPosts" value="true"/>
+      </args>
+    </plugin>
+    <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
+      <args>
+        <arg name="javascript" value="workmatch_relation_functions.js"/>
+          <arg name="searchfunction" value="generateSearchPairs"/>
+          <arg name="matchfunction" value="checkmatch"/>
+          <arg name="createobjectfunction" value="makeworkobject"/>
+      </args>
+    </plugin>
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+      <args>
+        <arg name="javascript" value="simple_relation.js"/>
+        <arg name="entryfunction" value="hasReview"/>
+      </args>
+    </plugin>
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+      <args>
+        <arg name="javascript" value="simple_relation.js"/>
+        <arg name="entryfunction" value="hasArticle"/>
+      </args>
+    </plugin>
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+      <args>
+        <arg name="javascript" value="simple_relation.js"/>
+        <arg name="entryfunction" value="hasCreatorDescription"/>
+      </args>
+    </plugin>
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+      <args>
+        <arg name="javascript" value="simple_relation.js"/>
+        <arg name="entryfunction" value="hasCreatorHomePage"/>
+      </args>
+    </plugin>
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+      <args>
+        <arg name="javascript" value="simple_relation.js"/>
+        <arg name="entryfunction" value="hasSubjectDescription"/>
+      </args>
+    </plugin>
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+      <args>
+        <arg name="javascript" value="simple_relation.js"/>
+        <arg name="entryfunction" value="hasOpenUrl"/>
+      </args>
+    </plugin>
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+      <args>
+        <arg name="javascript" value="simple_relation.js"/>
+        <arg name="entryfunction" value="hasDescriptionFromPublisher"/>
+      </args>
+    </plugin>
+  </workflow>
+  <workflow format="katalog" submitter="830380">
+    <plugin class="dk.dbc.opensearch.plugins.ForceFedoraPid"/>
+    <plugin class="dk.dbc.opensearch.plugins.XMLDCHarvester">
+      <args>
+        <arg name="javascript" value="xmldcharvester_beta.js"/>
+        <arg name="entryfunction" value="dcFromMarc"/>
+      </args>
+    </plugin>
+    <plugin class="dk.dbc.opensearch.plugins.Store">
+      <args>
+        <arg name="javascript" value="store_functions.js"/>
+        <arg name="entryfunction" value="isDeleteObjectMarc"/>
+        <arg name="skipUnchangedPosts" value="false"/>
+      </args>
+    </plugin>
+    <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
+      <args>
+        <arg name="javascript" value="workmatch_relation_functions.js"/>
+        <arg name="searchfunction" value="generateSearchPairs"/>
+        <arg name="matchfunction" value="checkmatch"/>
+        <arg name="createobjectfunction" value="makeworkobject"/>
+      </args>
+    </plugin>
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+      <args>
+        <arg name="javascript" value="simple_relation.js"/>
+        <arg name="entryfunction" value="hasReview"/>
+      </args>
+    </plugin>
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+      <args>
+        <arg name="javascript" value="simple_relation.js"/>
+        <arg name="entryfunction" value="hasArticle"/>
+      </args>
+    </plugin>
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+      <args>
+        <arg name="javascript" value="simple_relation.js"/>
+        <arg name="entryfunction" value="hasCreatorDescription"/>
+      </args>
+    </plugin>
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+      <args>
+        <arg name="javascript" value="simple_relation.js"/>
+        <arg name="entryfunction" value="hasCreatorHomePage"/>
+      </args>
+    </plugin>
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+      <args>
+        <arg name="javascript" value="simple_relation.js"/>
+        <arg name="entryfunction" value="hasSubjectDescription"/>
+      </args>
+    </plugin>
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+      <args>
+        <arg name="javascript" value="simple_relation.js"/>
+        <arg name="entryfunction" value="hasOnlineAccess"/>
+      </args>
+    </plugin>
+    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
+      <args>
+        <arg name="javascript" value="simple_relation.js"/>
+        <arg name="entryfunction" value="hasOpenUrl"/>
+      </args>
+    </plugin>
+  </workflow>
   <workflow format="katalog" submitter="830690">
     <plugin class="dk.dbc.opensearch.plugins.ForceFedoraPid"/>
     <plugin class="dk.dbc.opensearch.plugins.XMLDCHarvester">
@@ -3969,240 +4253,6 @@
       <args>
         <arg name="javascript" value="simple_relation.js"/>
         <arg name="entryfunction" value="isReviewOf"/>
-      </args>
-    </plugin>
-  </workflow>
-  <workflow format="katalog" submitter="830060">
-    <plugin class="dk.dbc.opensearch.plugins.ForceFedoraPid"/>
-    <plugin class="dk.dbc.opensearch.plugins.XMLDCHarvester">
-      <args>
-        <arg name="javascript" value="xmldcharvester_beta.js"/>
-        <arg name="entryfunction" value="dcFromMarc"/>
-      </args>
-    </plugin>
-    <plugin class="dk.dbc.opensearch.plugins.Store">
-      <args>
-        <arg name="javascript" value="store_functions.js"/>
-        <arg name="entryfunction" value="isDeleteObjectMarc"/>
-        <arg name="skipUnchangedPosts" value="false"/>
-      </args>
-    </plugin>
-    <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
-      <args>
-        <arg name="javascript" value="workmatch_relation_functions.js"/>
-        <arg name="searchfunction" value="generateSearchPairs"/>
-        <arg name="matchfunction" value="checkmatch"/>
-        <arg name="createobjectfunction" value="makeworkobject"/>
-      </args>
-    </plugin>
-    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
-      <args>
-        <arg name="javascript" value="simple_relation.js"/>
-        <arg name="entryfunction" value="hasReview"/>
-      </args>
-    </plugin>
-    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
-      <args>
-        <arg name="javascript" value="simple_relation.js"/>
-        <arg name="entryfunction" value="hasArticle"/>
-      </args>
-    </plugin>
-    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
-      <args>
-        <arg name="javascript" value="simple_relation.js"/>
-        <arg name="entryfunction" value="hasCreatorDescription"/>
-      </args>
-    </plugin>
-    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
-      <args>
-        <arg name="javascript" value="simple_relation.js"/>
-        <arg name="entryfunction" value="hasCreatorHomePage"/>
-      </args>
-    </plugin>
-    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
-      <args>
-        <arg name="javascript" value="simple_relation.js"/>
-        <arg name="entryfunction" value="hasSubjectDescription"/>
-      </args>
-    </plugin>
-    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
-      <args>
-        <arg name="javascript" value="simple_relation.js"/>
-        <arg name="entryfunction" value="hasOnlineAccess"/>
-      </args>
-    </plugin>
-    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
-      <args>
-        <arg name="javascript" value="simple_relation.js"/>
-        <arg name="entryfunction" value="hasOpenUrl"/>
-      </args>
-    </plugin>
-  </workflow>
-  <workflow format="ebrary" submitter="830060">
-    <plugin class="dk.dbc.opensearch.plugins.ForceFedoraPid"/>
-    <plugin class="dk.dbc.opensearch.plugins.XMLDCHarvester">
-      <args>
-        <arg name="javascript" value="xmldcharvester_beta.js"/>
-        <arg name="entryfunction" value="dcFromMarc"/>
-      </args>
-    </plugin>
-    <plugin class="dk.dbc.opensearch.plugins.Store">
-      <args>
-        <arg name="javascript" value="store_functions.js"/>
-        <arg name="entryfunction" value="isDeleteObjectMarc"/>
-        <arg name="skipUnchangedPosts" value="true"/>
-      </args>
-    </plugin>
-    <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
-      <args>
-        <arg name="javascript" value="workmatch_relation_functions.js"/>
-        <arg name="searchfunction" value="generateSearchPairs"/>
-        <arg name="matchfunction" value="checkmatch"/>
-        <arg name="createobjectfunction" value="makeworkobject"/>
-      </args>
-    </plugin>
-    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
-      <args>
-        <arg name="javascript" value="simple_relation.js"/>
-        <arg name="entryfunction" value="hasOnlineAccess"/>
-      </args>
-    </plugin>
-    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
-      <args>
-        <arg name="javascript" value="simple_relation.js"/>
-        <arg name="entryfunction" value="hasOpenUrl"/>
-      </args>
-    </plugin>
-  </workflow>
-  <workflow format="katalog" submitter="830370">
-    <plugin class="dk.dbc.opensearch.plugins.ForceFedoraPid"/>
-    <plugin class="dk.dbc.opensearch.plugins.XMLDCHarvester">
-      <args>
-        <arg name="javascript" value="xmldcharvester_beta.js"/>
-        <arg name="entryfunction" value="dcFromMarc"/>
-      </args>
-    </plugin>
-    <plugin class="dk.dbc.opensearch.plugins.Store">
-      <args>
-        <arg name="javascript" value="store_functions.js"/>
-        <arg name="entryfunction" value="isDeleteObjectMarc"/>
-        <arg name="skipUnchangedPosts" value="true"/>
-      </args>
-    </plugin>
-    <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
-      <args>
-        <arg name="javascript" value="workmatch_relation_functions.js"/>
-          <arg name="searchfunction" value="generateSearchPairs"/>
-          <arg name="matchfunction" value="checkmatch"/>
-          <arg name="createobjectfunction" value="makeworkobject"/>
-      </args>
-    </plugin>
-    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
-      <args>
-        <arg name="javascript" value="simple_relation.js"/>
-        <arg name="entryfunction" value="hasReview"/>
-      </args>
-    </plugin>
-    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
-      <args>
-        <arg name="javascript" value="simple_relation.js"/>
-        <arg name="entryfunction" value="hasArticle"/>
-      </args>
-    </plugin>
-    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
-      <args>
-        <arg name="javascript" value="simple_relation.js"/>
-        <arg name="entryfunction" value="hasCreatorDescription"/>
-      </args>
-    </plugin>
-    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
-      <args>
-        <arg name="javascript" value="simple_relation.js"/>
-        <arg name="entryfunction" value="hasCreatorHomePage"/>
-      </args>
-    </plugin>
-    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
-      <args>
-        <arg name="javascript" value="simple_relation.js"/>
-        <arg name="entryfunction" value="hasSubjectDescription"/>
-      </args>
-    </plugin>
-    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
-      <args>
-        <arg name="javascript" value="simple_relation.js"/>
-        <arg name="entryfunction" value="hasOpenUrl"/>
-      </args>
-    </plugin>
-    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
-      <args>
-        <arg name="javascript" value="simple_relation.js"/>
-        <arg name="entryfunction" value="hasDescriptionFromPublisher"/>
-      </args>
-    </plugin>
-  </workflow>
-  <workflow format="katalog" submitter="830380">
-    <plugin class="dk.dbc.opensearch.plugins.ForceFedoraPid"/>
-    <plugin class="dk.dbc.opensearch.plugins.XMLDCHarvester">
-      <args>
-        <arg name="javascript" value="xmldcharvester_beta.js"/>
-        <arg name="entryfunction" value="dcFromMarc"/>
-      </args>
-    </plugin>
-    <plugin class="dk.dbc.opensearch.plugins.Store">
-      <args>
-        <arg name="javascript" value="store_functions.js"/>
-        <arg name="entryfunction" value="isDeleteObjectMarc"/>
-        <arg name="skipUnchangedPosts" value="false"/>
-      </args>
-    </plugin>
-    <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
-      <args>
-        <arg name="javascript" value="workmatch_relation_functions.js"/>
-        <arg name="searchfunction" value="generateSearchPairs"/>
-        <arg name="matchfunction" value="checkmatch"/>
-        <arg name="createobjectfunction" value="makeworkobject"/>
-      </args>
-    </plugin>
-    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
-      <args>
-        <arg name="javascript" value="simple_relation.js"/>
-        <arg name="entryfunction" value="hasReview"/>
-      </args>
-    </plugin>
-    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
-      <args>
-        <arg name="javascript" value="simple_relation.js"/>
-        <arg name="entryfunction" value="hasArticle"/>
-      </args>
-    </plugin>
-    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
-      <args>
-        <arg name="javascript" value="simple_relation.js"/>
-        <arg name="entryfunction" value="hasCreatorDescription"/>
-      </args>
-    </plugin>
-    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
-      <args>
-        <arg name="javascript" value="simple_relation.js"/>
-        <arg name="entryfunction" value="hasCreatorHomePage"/>
-      </args>
-    </plugin>
-    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
-      <args>
-        <arg name="javascript" value="simple_relation.js"/>
-        <arg name="entryfunction" value="hasSubjectDescription"/>
-      </args>
-    </plugin>
-    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
-      <args>
-        <arg name="javascript" value="simple_relation.js"/>
-        <arg name="entryfunction" value="hasOnlineAccess"/>
-      </args>
-    </plugin>
-    <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
-      <args>
-        <arg name="javascript" value="simple_relation.js"/>
-        <arg name="entryfunction" value="hasOpenUrl"/>
       </args>
     </plugin>
   </workflow>
