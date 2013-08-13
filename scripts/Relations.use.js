@@ -52,10 +52,9 @@ var Relations = function() {
         DbcAddiRelations.isReviewOf( pid, result);
       }
     }
-	
 
     if (i === 0) {
-			if ( String(reviewXML.dkabm::record.ac::source).match(/Litteratursiden/) && String(reviewXML.dkabm::record.dc::type).match(/Anmeldelse/) ) {
+      if ( String(reviewXML.dkabm::record.ac::source).match(/Litteratursiden/) && String(reviewXML.dkabm::record.dc::type).match(/Anmeldelse/) ) {
         var relation = "ISBN:" + String(reviewXML.dkabm::record.dcterms::references);
 
         var results = FedoraPIDSearch.identifier( relation );
@@ -68,28 +67,26 @@ var Relations = function() {
           if (!String(result).match(/work:.*/)) {
             DbcAddiRelations.isReviewOf( pid, result );
           }
-        }			
-			} 
+        }
+      }
+      var reviewedCreator = String(reviewXML.dkabm::record.dc::subject[0]);
+      reviewedCreator = Normalize.removeSpecialCharacters(reviewedCreator);
+      var reviewedTitle = String(reviewXML.dkabm::record.dc::subject[1]);
+      reviewedTitle = Normalize.removeSpecialCharacters(reviewedTitle);
+      var query = "creator = " + reviewedCreator + " AND title = " + reviewedTitle;
+      Log.debug( "query: " + query );
 
-				var reviewedCreator = String(reviewXML.dkabm::record.dc::subject[0]);	
-				reviewedCreator = Normalize.removeSpecialCharacters(reviewedCreator);	
-				var reviewedTitle = String(reviewXML.dkabm::record.dc::subject[1]);
-				reviewedTitle = Normalize.removeSpecialCharacters(reviewedTitle);
-				var query = "creator = " + reviewedCreator + " AND title = " + reviewedTitle;
-				Log.debug( "query: " + query );
-			
-				var results = FedoraCQLSearch.search( query );
-			
-				for ( var k = 0; k < results.length; ++k ) {
-					var result = results[k]
-				
-					Log.info( "result: " + result );
-				
-					if (!String(result).match(/work:.*/)) {
-						DbcAddiRelations.isReviewOf( pid, result );
-					}
-				}	
+      var results = FedoraCQLSearch.search( query );
 
+      for ( var k = 0; k < results.length; ++k ) {
+        var result = results[k];
+
+        Log.info( "result: " + result );
+
+        if (!String(result).match(/work:.*/)) {
+          DbcAddiRelations.isReviewOf( pid, result );
+        }
+      }
     }
 
     Log.info ("End isReviewOf" );
@@ -124,7 +121,6 @@ var Relations = function() {
 
     Log.info( "FirstEdIdentifier: " + identifierFirstEd );   
 
-
     var results = FedoraPIDSearch.relation( identifierFirstEd );
 
     for ( var i = 0; i < results.length; ++i ) {
@@ -137,15 +133,14 @@ var Relations = function() {
       }
     }
 
-
       if (String(katalogXML.dkabm::record.dc::identifier.@xsi::type).match(/dkdcplus:ISBN/)) {
- 				var isbn = "ISBN:" + String(katalogXML.dkabm::record.dc::identifier);
+        var isbn = "ISBN:" + String(katalogXML.dkabm::record.dc::identifier);
  
- 				var query = "relation = " + isbn + " AND type = anmeldelse";
-		
-			Log.info( "query: " + query );
+        var query = "relation = " + isbn + " AND type = anmeldelse";
 
-				var results = FedoraCQLSearch.search( query );
+        Log.info( "query: " + query );
+
+        var results = FedoraCQLSearch.search( query );
 
         for ( var i = 0; i < results.length; ++i ) {
           var result = results[i];
@@ -156,34 +151,36 @@ var Relations = function() {
             DbcAddiRelations.isReviewOf( result, pid );
           }
         }
-      }				
+      }
 
-			var creator = String(katalogXML.dkabm::record.dc::creator[0]).replace(/(.*)\(.*\)/, "$1");
-			creator = creator.replace(/(.*) $/, "$1");
-			creator = Normalize.removeSpecialCharacters(creator);
-			var title = String(katalogXML.dkabm::record.dc::title[0]);
-			title = Normalize.removeSpecialCharacters(title);
-			var query = "subject = " + creator + " AND subject = " + title + " AND type = anmeldelse";
-			
-			Log.info( "query: " + query );
-			
-			var results = FedoraCQLSearch.search( query );
-	
-      for ( var i = 0; i < results.length; ++i ) {
-				var result = results[i];
+      var creator = String(katalogXML.dkabm::record.dc::creator[0]).replace(/(.*)\(.*\)/, "$1");
+      creator = creator.replace(/(.*) $/, "$1");
+      creator = Normalize.removeSpecialCharacters(creator);
+      var title = String(katalogXML.dkabm::record.dc::title[0]);
+      title = Normalize.removeSpecialCharacters(title);
 
-      	Log.info( "result: " + result );				
+      if (creator !=="" && title !=="") {
+        var query = "subject = " + creator + " AND subject = " + title + " AND type = anmeldelse";
+        
+        Log.info( "query: " + query );
+        
+        var results = FedoraCQLSearch.search( query );
 
-      	if (String(result).match(/150005:.*/)) {
-      		DbcAddiRelations.isReviewOf( result, pid );
-      	}
-    	}					
+        for ( var i = 0; i < results.length; ++i ) {
+          var result = results[i];
 
+          Log.info( "result: " + result );
+
+          if (String(result).match(/150005:.*/)) {
+            DbcAddiRelations.isReviewOf( result, pid );
+          }
+        }
+      }
 
     Log.info ("End hasReview" );
 
   };
-  
+
 	that.isAnalysisOf = function ( xml, pid ) {
 
     Log.info ("Start isAnalysisOf" );
