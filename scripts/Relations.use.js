@@ -119,7 +119,7 @@ var Relations = function() {
 
     var identifierFirstEd = String(katalogXML.*.*.*.(@tag=='017').*.(@code=='a'));
 
-    Log.info( "FirstEdIdentifier: " + identifierFirstEd );   
+    Log.info( "First Edition Identifier: " + identifierFirstEd );
 
     var results = FedoraPIDSearch.relation( identifierFirstEd );
 
@@ -161,9 +161,9 @@ var Relations = function() {
 
       if (creator !=="" && title !=="") {
         var query = "subject = " + creator + " AND subject = " + title + " AND type = anmeldelse";
-        
+
         Log.info( "query: " + query );
-        
+
         var results = FedoraCQLSearch.search( query );
 
         for ( var i = 0; i < results.length; ++i ) {
@@ -187,14 +187,14 @@ var Relations = function() {
 
     // Converting the xml-string to an XMLObject which e4x can handle:
     var analysisXML = XmlUtil.fromString( xml );
-            
+
     var child;
     var creator;
     var creators = [];
     var analysedTitle;
     var analysedTitles = [];
     var query;
-                        
+
      //Litteraturtolkninger - does not work properly at the moment KWC 2013-05-03
 //    if (String(analysisXML.dkabm::record.ac::source).match(/Litteraturtolkninger/)) {
 //    
@@ -240,7 +240,7 @@ var Relations = function() {
 //	          }     
 //	        }
 //	      }
-			            
+
       //Litteratursiden
 //		} else if ( String(analysisXML.dkabm::record.ac::source).match(/Litteratursiden/) && String(analysisXML.dkabm::record.dc::title).match(/Analyse af/) ) {
     if ( String(analysisXML.dkabm::record.ac::source).match(/Litteratursiden/) && String(analysisXML.dkabm::record.dc::title).match(/Analyse af/) ) {
@@ -257,34 +257,32 @@ var Relations = function() {
           	DbcAddiRelations.isAnalysisOf( pid, result );
         	}
       	}
-			
-			if ( j === 0 ) {	
+
+			if ( j === 0 ) {
 				var analysedCreator = String(analysisXML.dkabm::record.dc::subject[0]);
 				analysedCreator = Normalize.removeSpecialCharacters(analysedCreator);
 				var analysedTitle = String(analysisXML.dkabm::record.dc::subject[1]);
 				analysedTitle = Normalize.removeSpecialCharacters(analysedTitle);
 				var query = "creator = " + analysedCreator + " AND title = " + analysedTitle;
 				Log.info( "query: " + query );
-			
+
 				var results = FedoraCQLSearch.search( query );
-			
+
 				for ( var j = 0; j < results.length; ++j ) {
 					var result = results[j]
-				
+
 					Log.info( "result: " + result );
-				
+
 					if (!String(result).match(/work:.*/) && !String(result).match(/870974:.*/) && !String(result).match(/150005:.*/)) {
 						DbcAddiRelations.isAnalysisOf( pid, result );
 					}
-				}							
-			} 			
+				}
+			}
     }
-		
 
     Log.info ("End isAnalysisOf" );
 
   };
-
 
   that.hasAnalysis = function ( xml, pid) {
 
@@ -298,25 +296,27 @@ var Relations = function() {
     creator = creator.replace(/(.*) $/, "$1");
     var title = String(katalogXML.dkabm::record.dc::title[0]);
     title = Normalize.removeSpecialCharacters(title);
-    var query = "subject = " + creator + " AND subject = " + title + " AND ( label = analyse OR label = littolk )";
-  
-    Log.info("query: " + query);
-      
-    var results = FedoraCQLSearch.search( query );
-      
-    for ( var i = 0; i < results.length; ++i ) {
-      var result = results[i];
 
-      Log.info( "result: " + result );        
-      if (String(result).match(/150005:.*/) || String(result).match(/870974:.*/)) {
-        DbcAddiRelations.hasAnalysis( pid, result );
+    if (creator !=="" && title !=="") {
+      var query = "subject = " + creator + " AND subject = " + title + " AND ( label = analyse OR label = littolk )";
+
+      Log.info("query: " + query);
+
+      var results = FedoraCQLSearch.search( query );
+
+      for ( var i = 0; i < results.length; ++i ) {
+        var result = results[i];
+
+        Log.info( "result: " + result );
+        if (String(result).match(/150005:.*/) || String(result).match(/870974:.*/)) {
+          DbcAddiRelations.hasAnalysis( pid, result );
+        }
       }
     }
 
     Log.info ("End hasAnalysis" );
 
   };
-
 
 //TODO: VERSION OF hasAnalysis that does not work on frosty - needs to be fixed	
 //	that.hasAnalysis = function ( xml, pid) {
@@ -396,7 +396,6 @@ var Relations = function() {
         DbcBibRelations.isPartOfManifestation( pid, result );
       }
     }
-
 
     var child;
 
