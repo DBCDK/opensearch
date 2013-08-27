@@ -1045,10 +1045,11 @@ var Relations = function() {
         for each (child in manifestationXML.*.*.*.(@tag=='d08').*.(@code=='a')) {        
           if ( String( child ).match(/ekurser/) ) {
             Log.info("KWC2 match på ekurser i d08");
-            var url = String( child ).match( /http.*[0-9]\// );
+            //var url = String( child ).match( /http.*[0-9]\// );
+            var url = String( child ).match( /ekurser/ );
             Log.info ("KWC3 den url der kom ud af d08= " + url);
             Log.info ("KWC4 d08 *a = " + String( child ));
-            if (url !== undefined) {
+            if (url !== null) {
               DbcAddiRelations.hasOnlineAccess(pid, url);
             }
           } else {
