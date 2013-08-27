@@ -1054,7 +1054,9 @@ var Relations = function() {
             }
           }
         }
-        if ( !String(manifestationXML.*.*.*.(@tag=='d08').*.(@code=='a').match(/ekurser/) )) { 
+        
+        //!String(result).match(/work:.*/)
+        if ( !String(manifestationXML.*.*.*.(@tag=='d08').*.(@code=='a')).match(/ekurser/) ) { 
           for each (child in manifestationXML.dkabm::record.dc::identifier) {
             if (String(child.@xsi::type).match("dcterms:URI")) {  
               DbcAddiRelations.hasOnlineAccess ( pid, String(child) );
