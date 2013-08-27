@@ -1042,22 +1042,23 @@ var Relations = function() {
         }
       } else if (String(manifestationXML.dkabm::record.ac::source).match(/eKurser\.nu/)) {
         Log.info( "KWC1 ekurser");
-        if ( String( manifestationXML.*.*.*.(@tag=='d08').*.(@code=='a') ).match(/ekurser/) ) {
-          Log.info("KWC2 match på ekurser i d08");
-          var url = String( manifestationXML.*.*.*.(@tag=='d08').*.(@code=='a') ).match( /http.*[0-9]\// );
-          Log.info ("KWC3 den url der kom ud af d08= " + url);
-          Log.info ("KWC4 d08 *a = " + String( manifestationXML.*.*.*.(@tag=='d08').*.(@code=='a') ));
-          if (url !== undefined) {
-            DbcAddiRelations.hasOnlineAccess(pid, url);
+        for each (child in manifestationXML.*.*.*.(@tag=='d08').*.(@code=='a')) {        
+          if ( String( child ).match(/ekurser/) ) {
+            Log.info("KWC2 match på ekurser i d08");
+            var url = String( child ).match( /http.*[0-9]\// );
+            Log.info ("KWC3 den url der kom ud af d08= " + url);
+            Log.info ("KWC4 d08 *a = " + String( child ));
+            if (url !== undefined) {
+              DbcAddiRelations.hasOnlineAccess(pid, url);
+            }
+          } else {
+            for each (child in manifestationXML.dkabm::record.dc::identifier) {
+              if (String(child.@xsi::type).match("dcterms:URI")) {  
+                DbcAddiRelations.hasOnlineAccess ( pid, String(child) );
+              }             
+            }
           }
-        } else {
-          for each (child in manifestationXML.dkabm::record.dc::identifier) {
-            if (String(child.@xsi::type).match("dcterms:URI")) {  
-              DbcAddiRelations.hasOnlineAccess ( pid, String(child) );
-            }             
-          }
-        }
-        
+        } 
       }
 		
 		var infomedia = 0;	
