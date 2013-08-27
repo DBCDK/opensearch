@@ -1040,7 +1040,7 @@ var Relations = function() {
             DbcAddiRelations.hasOnlineAccess ( pid, "[URL]" + String(manifestationXML.dkabm::record.ac::identifier).replace(/\|.*/, "") );
           }         
         }
-      } else if (String(manifestationXML.dkabm::record.ac::identifier).match(/\|150052/)) {
+      } else if (String(manifestationXML.dkabm::record.ac::source).match(/eKurser\.nu/)) {
         Log.info( "KWC1 ekurser");
         if ( String( manifestationXML.*.*.*.(@tag=='d08').*.(@code=='a') ).match(/ekurser/) ) {
           Log.info("KWC2 match på ekurser i d08");
