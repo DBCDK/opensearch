@@ -1040,23 +1040,17 @@ var Relations = function() {
             DbcAddiRelations.hasOnlineAccess ( pid, "[URL]" + String(manifestationXML.dkabm::record.ac::identifier).replace(/\|.*/, "") );
           }         
         }
+//ekurser.nu katalog
       } else if (String(manifestationXML.dkabm::record.ac::source).match(/eKurser\.nu/)) {
-        Log.info( "KWC1 ekurser");
-        for each (child in manifestationXML.*.*.*.(@tag=='d08').*.(@code=='a')) {        
+        for each (child in manifestationXML.*.*.*.(@tag=='d08').*.(@code=='a')) { //find url from d08 *a if the course is not directly from ekurser.nu
           if ( String( child ).match(/ekurser/) ) {
-            Log.info("KWC2 match på ekurser i d08");
             var url = String( child ).match( /http.*[0-9]/ );
-            //var url = String( child ).match( /ekurser/ );
-            Log.info ("KWC3 den url der kom ud af d08= " + url);
-            Log.info ("KWC4 d08 *a = " + String( child ));
             if (url !== null) {
               DbcAddiRelations.hasOnlineAccess(pid, url);
             }
           }
         }
-        
-        //!String(result).match(/work:.*/)
-        if ( !String(manifestationXML.*.*.*.(@tag=='d08').*.(@code=='a')).match(/ekurser/) ) { 
+        if ( !String(manifestationXML.*.*.*.(@tag=='d08').*.(@code=='a')).match(/ekurser/) ) {  //else take the ekursus url from dc identifier
           for each (child in manifestationXML.dkabm::record.dc::identifier) {
             if (String(child.@xsi::type).match("dcterms:URI")) {  
               DbcAddiRelations.hasOnlineAccess ( pid, String(child) );
@@ -1065,9 +1059,7 @@ var Relations = function() {
         }
       }
 
-
-
-		
+//infomedia links		
 		var infomedia = 0;	
 		for each (child in manifestationXML.*.*.*.(@tag=='538').*.(@code=='i')) {
       if (String(child) === "Infomedia" && infomedia === 0) {
