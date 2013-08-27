@@ -1040,8 +1040,15 @@ var Relations = function() {
             DbcAddiRelations.hasOnlineAccess ( pid, "[URL]" + String(manifestationXML.dkabm::record.ac::identifier).replace(/\|.*/, "") );
           }         
         }
-      } 
-
+      } else if (String(manifestationXML.dkabm::record.ac::identifier).match(/\|150052/)) {
+        Log.debug( "KWC1 ekurser");
+        if ( String( manifestationXML.*.*.*.(@tag=='d08').*.(@code=='a') ).match(/ekurser/) ) {
+          Log.debug("KWC2 match på ekurser i d08");
+          var url = String( manifestationXML.*.*.*.(@tag=='d08').*.(@code=='a') ).match( /http.*[1-9]\//, "" );
+          Log.debug ("KWC3 den url der kom ud af d08= ", url);
+        }
+        
+      }
 		
 		var infomedia = 0;	
 		for each (child in manifestationXML.*.*.*.(@tag=='538').*.(@code=='i')) {
