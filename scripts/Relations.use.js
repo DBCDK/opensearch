@@ -1044,7 +1044,7 @@ var Relations = function() {
         Log.info( "KWC1 ekurser");
         if ( String( manifestationXML.*.*.*.(@tag=='d08').*.(@code=='a') ).match(/ekurser/) ) {
           Log.info("KWC2 match på ekurser i d08");
-          var url = String( manifestationXML.*.*.*.(@tag=='d08').*.(@code=='a') ).match( /http.*[1-9]\//, "" );
+          var url = String( manifestationXML.*.*.*.(@tag=='d08').*.(@code=='a') ).match( /http.*[0-9]\// );
           Log.info ("KWC3 den url der kom ud af d08= ", url);
             DbcAddiRelations.hasOnlineAccess ( pid, url );
         }
