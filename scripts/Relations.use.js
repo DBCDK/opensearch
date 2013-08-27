@@ -1045,8 +1045,16 @@ var Relations = function() {
         if ( String( manifestationXML.*.*.*.(@tag=='d08').*.(@code=='a') ).match(/ekurser/) ) {
           Log.info("KWC2 match på ekurser i d08");
           var url = String( manifestationXML.*.*.*.(@tag=='d08').*.(@code=='a') ).match( /http.*[0-9]\// );
-          Log.info ("KWC3 den url der kom ud af d08= ", url);
-            DbcAddiRelations.hasOnlineAccess ( pid, url );
+          Log.info ("KWC3 den url der kom ud af d08= " + url);
+          if (url !== undefined) {
+            DbcAddiRelations.hasOnlineAccess(pid, url);
+          }
+        } else {
+          for each (child in manifestationXML.dkabm::record.dc::identifier) {
+            if (String(child.@xsi::type).match("dcterms:URI")) {  
+              DbcAddiRelations.hasOnlineAccess ( pid, String(child) );
+            }             
+          }
         }
         
       }
