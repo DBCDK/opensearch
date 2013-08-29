@@ -1057,6 +1057,15 @@ var Relations = function() {
             }             
           }
         }
+      } else if (String(manifestationXML.dkabm::record.ac::source).match(/turteori\.dk/)) {
+        for each (child in manifestationXML.*.*.*.(@tag=='d08').*.(@code=='a')) { //find url from d08 *a for direct access for libraries
+          if ( String( child ).match(/turteori/) ) {
+            var url = String( child ).match( /http.*[0-9]/ );
+            if (url !== null) {
+              DbcAddiRelations.hasOnlineAccess(pid, url);
+            }
+          }
+        }        
       }
 
 //infomedia links		
