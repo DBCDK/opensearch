@@ -1042,15 +1042,15 @@ var Relations = function() {
         }
 //ekurser.nu katalog
       } else if (String(manifestationXML.dkabm::record.ac::source).match(/eKurser\.nu/)) {
-        for each (child in manifestationXML.*.*.*.(@tag=='d08').*.(@code=='a')) { //find url from d08 *a if the course is not directly from ekurser.nu
+        for each (child in manifestationXML.*.*.*.(@tag=='501').*.(@code=='u')) { //find url from 501 *u if the course is not directly from ekurser.nu
           if ( String( child ).match(/ekurser/) ) {
-            var url = String( child ).match( /http.*[0-9]/ );
+            var url = String( child )
             if (url !== null) {
               DbcAddiRelations.hasOnlineAccess(pid, url);
             }
           }
         }
-        if ( !String(manifestationXML.*.*.*.(@tag=='d08').*.(@code=='a')).match(/ekurser/) ) {  //else take the ekursus url from dc identifier
+        if ( !String(manifestationXML.*.*.*.(@tag=='501').*.(@code=='u')).match(/ekurser/) ) {  //else take the ekursus url from dc identifier
           for each (child in manifestationXML.dkabm::record.dc::identifier) {
             if (String(child.@xsi::type).match("dcterms:URI")) {  
               DbcAddiRelations.hasOnlineAccess ( pid, String(child) );
@@ -1059,9 +1059,9 @@ var Relations = function() {
         }
 //turteori.dk katalog
       } else if (String(manifestationXML.dkabm::record.ac::source).match(/turteori\.dk/)) {
-        for each (child in manifestationXML.*.*.*.(@tag=='d08').*.(@code=='a')) { //find url from d08 *a for direct access for libraries
+        for each (child in manifestationXML.*.*.*.(@tag=='501').*.(@code=='u')) { //find url from 501 *u for direct access for libraries
           if ( String( child ).match(/turteori/) ) {
-            var url = String( child ).match( /http.*[0-9]/ );
+            var url = String( child );
             if (url !== null) {
               DbcAddiRelations.hasOnlineAccess(pid, url);
             }
