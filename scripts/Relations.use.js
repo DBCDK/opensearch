@@ -830,12 +830,12 @@ var Relations = function() {
         }
         if (!String(child.@xsi::type).match("dkdcplus:genre")) {
   	      var subject = String(child);
-  	
-  	      Log.info( "Subject: " + subject );
-  	      Log.info( "pid: " + pid );
-          
-          subjects.push (subject); 	      
-
+  	      
+          if (!subject.match(/download|streaming/i)) { //2013-09-12 hack because broend2 fedora cannot handle search on these two words because we have 6 mill oso objects with these titles 
+            Log.info("Subject: " + subject);
+            Log.info("pid: " + pid);
+            subjects.push(subject);
+          }
         }
       } 
       for (var i = 0; i < subjects.length; ++i ) {         
