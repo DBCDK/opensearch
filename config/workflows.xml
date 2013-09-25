@@ -981,7 +981,7 @@
       <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-        <arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
@@ -1198,7 +1198,7 @@
       <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-        <arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
@@ -1883,7 +1883,7 @@
       <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-        <arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
@@ -1943,7 +1943,7 @@
       <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-        <arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
@@ -2003,7 +2003,7 @@
       <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-        <arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
@@ -2063,7 +2063,7 @@
       <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-        <arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
@@ -2123,7 +2123,7 @@
       <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-        <arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
@@ -2183,7 +2183,7 @@
       <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-        <arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
@@ -2243,7 +2243,7 @@
       <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-        <arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
@@ -2303,7 +2303,7 @@
       <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-        <arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
@@ -2363,7 +2363,7 @@
       <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-        <arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
@@ -2423,7 +2423,7 @@
       <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-        <arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
@@ -2483,7 +2483,7 @@
       <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-        <arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
@@ -2543,7 +2543,7 @@
       <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-        <arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
@@ -2603,7 +2603,7 @@
       <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-        <arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
@@ -2663,7 +2663,7 @@
       <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-        <arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
@@ -2723,7 +2723,7 @@
       <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-        <arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
@@ -2783,7 +2783,7 @@
       <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-        <arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
@@ -2843,7 +2843,7 @@
       <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-        <arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
@@ -2903,7 +2903,7 @@
       <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-        <arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
@@ -2963,7 +2963,7 @@
       <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-        <arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
@@ -3023,7 +3023,7 @@
       <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-        <arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
@@ -3083,7 +3083,7 @@
       <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-        <arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
@@ -3143,7 +3143,7 @@
       <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-        <arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.Store"/>
@@ -3204,7 +3204,7 @@
       <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-        <arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
@@ -3264,7 +3264,7 @@
       <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-        <arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
@@ -3324,7 +3324,7 @@
       <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-        <arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
@@ -3384,7 +3384,7 @@
       <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-        <arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
@@ -3444,7 +3444,7 @@
       <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-        <arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
@@ -3504,7 +3504,7 @@
       <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-        <arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
@@ -3564,7 +3564,7 @@
       <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-        <arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
@@ -3624,7 +3624,7 @@
       <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-        <arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
@@ -3684,7 +3684,7 @@
       <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-        <arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
@@ -3769,7 +3769,7 @@
       <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-        <arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
@@ -3829,7 +3829,7 @@
       <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-        <arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
@@ -3955,7 +3955,7 @@
       <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-        <arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
@@ -3991,7 +3991,7 @@
       <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-        <arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
@@ -4123,7 +4123,7 @@
       <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-        <arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.MarcxchangeWorkRelation">
@@ -4327,7 +4327,7 @@
       <args>
         <arg name="javascript" value="store_functions.js"/>
         <arg name="entryfunction" value="isDeleteObjectMarc"/>
-        <arg name="skipUnchangedPosts" value="true"/>
+        <arg name="skipUnchangedPosts" value="false"/>
       </args>
     </plugin>
     <plugin class="dk.dbc.opensearch.plugins.SimpleGenericRelation">
