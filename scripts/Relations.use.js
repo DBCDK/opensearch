@@ -653,7 +653,7 @@ var Relations = function() {
 				break;
 		}	
 		
-		var query = "title = " + title + " AND ( creator = " + creator + " OR contributor = " + creator.replace(/NOBIRTH:/, "") + " )" + " AND " + type;
+		var query = "title = " + title + " AND ( creator = " + creator + " OR contributor = " + creator.replace(/NOBIRTH: /, "") + " )" + " AND " + type;
 		Log.debug(pid + " - IS DESCRIPTION FROM PUBLISHER QUERY: " + query);
 				
 		var results = FedoraCQLSearch.search( query );
