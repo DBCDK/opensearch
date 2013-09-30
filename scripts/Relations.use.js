@@ -135,8 +135,9 @@ var Relations = function() {
 
       if (String(katalogXML.dkabm::record.dc::identifier.@xsi::type).match(/dkdcplus:ISBN/)) {
         var isbn = "";
+        var i = 0;    
         for each (var child in katalogXML.dkabm::record.dc::identifier) {  //using 'for each' structure because of a bug in the version of rhino used in opensearch "brond2" see bug 15570
-          var i = 0;                                                       //cannot handle a syntax like child.(@xsi::type == 'dkdcplus:ISBN') - gives error Bad codegen
+                                                                          //cannot handle a syntax like child.(@xsi::type == 'dkdcplus:ISBN') - gives error Bad codegen
           if (String (child.@xsi::type).match("dkdcplus:ISBN") && i === 0 ) { //counter 'i' inserted to only use the first ISBN
             isbn = "ISBN:" + String (child);
             i++;
