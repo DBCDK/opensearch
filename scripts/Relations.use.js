@@ -1098,6 +1098,7 @@ var Relations = function() {
     //Filmcentralen (used to be Filmstriben (skoler)
     // Converting the xml-string to an XMLObject which e4x can handle:
     var manifestationXML = XmlUtil.fromString( xml );
+    var child;
 
       for each (child in manifestationXML.dkabm::record.dc::identifier) {
         if (String(child.@xsi::type).match("dcterms:URI")) {  
