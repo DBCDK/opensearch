@@ -112,7 +112,7 @@ var Relations = function() {
 
       Log.info( "result: " + result );
 
-      if (!String(result).match(/work:.*/)) {
+      if ( !String(result).match(/work:.*/) && !String(result).match(/150014:.*/) ) {
         DbcAddiRelations.isReviewOf( result, pid );
       }
     }
