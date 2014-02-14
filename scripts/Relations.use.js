@@ -105,7 +105,7 @@ var Relations = function() {
     Log.info( "Identifier: " + identifier );    
     Log.info( "pid: " + pid );
 
-    var results = FedoraPIDSearch.relation( identifier );
+    var results = FedoraPIDSearch.relation( "ANM:" + identifier );
 
     for ( var i = 0; i < results.length; ++i ) {
       var result = results[i];
@@ -121,7 +121,7 @@ var Relations = function() {
 
     Log.info( "First Edition Identifier: " + identifierFirstEd );
 
-    var results = FedoraPIDSearch.relation( identifierFirstEd );
+    var results = FedoraPIDSearch.relation( "ANM:" + identifierFirstEd );
 
     for ( var i = 0; i < results.length; ++i ) {
       var result = results[i];
